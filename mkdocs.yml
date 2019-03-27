@@ -1,0 +1,63 @@
+site_name: Enigma
+
+theme:
+  name: 'material'
+  palette:
+    primary: 'pink'
+    accent: 'indigo'
+  logo: 'images/enigmawhite.png'
+
+
+  extra_css:
+  - 'stylesheets/extra.css'
+
+  markdown_extensions:
+  - admonition
+
+  extra:
+    feature:
+      tabs: true
+    social:
+      - type: 'github'
+        link: 'https://github.com/squidfunk'
+      - type: 'twitter'
+        link: 'https://twitter.com/squidfunk'
+      - type: 'linkedin'
+        link: 'https://linkedin.com/in/squidfunk'
+
+nav:
+  - Home: 
+    - Introduction: IntroductionToEnigma.md
+    - New in Discovery: NewForDiscovery.md
+    - The Enigma Network: EnigmaArchitecture.md
+  - Getting Started:
+    - Enigma Walkthrough: Walkthrough.md
+    - Rust: RustWalkthrough.md
+    - Secret Contracts: SecretContractWalkthrough.md
+    - Enigma Network and Library: DeploymentWalkthrough.md
+  - Documentation:
+    - Rust:
+      - Why Rust: WhyRust.md
+      - Rust Walkthrough: RustWalkthrough.md
+      - Other Rust Resources: RustResources.md
+    - Secret Contracts:
+      - Secret Contracts: SecretContracts.md
+      - Secret Contract Walkthrough: SecretContractWalkthrough.md
+      - Examples: SecretContractExamples.md
+    - Enigma JS Library:
+      - Introduction: IntroductionToEnigmaJS.md
+      - API: API.md
+      - Fees: Fees.md
+      - Key Management: KeyManagement.md
+    - Deploying the Enigma Network:
+      - Deployment Methods: IntroductionToDeployment
+      - Developer Mode: DeveloperMode.md
+      - Public Testnet: DiscoveryTestnet.md
+    - Application Design: ApplicationDesign.md
+  - Reference:
+    - Reference Topics: IntroductionToReference.md
+    - Enigma Technical Overview: EnigmaOverview.md
+    - Secret Contract Enigne: SecretContractEngine.md
+  - Glossary: Glossary.md
+
+  

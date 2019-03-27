@@ -1,0 +1,37 @@
+﻿# What is Enigma? 🤔
+Enigma is a decentralized network that enables **Secret Contracts**. This means you can create decentralized applications with end-to-end data privacy and strong correctness guarantees. 
+
+ - Data inputs, and outputs are encrypted throughout-- even the nodes
+   running the computation **can't see the data**. 
+ - Enigma is **Ethereum compatible**. Secret Contracts can call any
+   function inside a smart contract on Ethereum.
+
+## Enigma at a Glance 👁️
+This diagram illustrates how data flows in an Enigma-based application.
+ [ INSERT DIAGRAM ] 
+ - A secret contract function call is considered a single private computation or [task](http://enigma.co/protocol-discovery/glossary.html#task). Secret contracts are registered at deployment on the Enigma Contract (on Ethereum), which the Enigma network watches for new tasks. 
+ - These tasks are initiated (and paid for) by the end users of Ethereum dApps and are then offloaded from Ethereum into the Enigma network for computation.
+ - The Enigma network then selects a [worker node](http://enigma.co/protocol-discovery/glossary.html#worker) to execute the given task in a modified Web Assembly interpreter (WASMI) running inside a Trusted Execution Environment (TEE) using Intel Software Guard Extensions (SGX) technology (also known as an [enclave](http://enigma.co/protocol-discovery/glossary.html#enclave)). 
+ - After computing a task, a cryptographic proof of the completed task is recorded, and eventually verified, on the Ethereum network.
+
+**Key Concepts** 🤞
+ - Secret Contract
+ - Task 
+ - Enigma Contract 
+ - Enigma JS Library 
+ - Worker Node
+
+## What can I do with Enigma? 🛠️
+The **Discovery** release of Enigma has plenty of exciting new features, including **secret state**, Rust-based secret contracts, private outputs, and more. Some of the applications we're excited about include:
+
+ - *Access-control for data* (like price predictions or a pointer to an
+   IPFS file)
+ - Games where your *"pocket cards"* must stay secret (like Gin
+   Rummy or Poker)
+ -  *Private voting,* without a commit-reveal scheme
+   (actually, any use-case with a commit-reveal pattern can be
+   streamlined with Enigma!)
+ - *Secret inputs* to a credit-scoring algorithm
+ - *Sybil-prevention via social verification*-- without exposing your
+   user's data!
+
