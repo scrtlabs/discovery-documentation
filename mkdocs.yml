@@ -27,14 +27,10 @@ theme:
 
 nav:
   - Home: 
-    - Introduction: IntroductionToEnigma.md
+    - Introduction: index.md
     - New in Discovery: NewForDiscovery.md
-    - The Enigma Network: EnigmaArchitecture.md
   - Getting Started:
     - Enigma Walkthrough: Walkthrough.md
-    - Rust: RustWalkthrough.md
-    - Secret Contracts: SecretContractWalkthrough.md
-    - Enigma Network and Library: DeploymentWalkthrough.md
   - Documentation:
     - Rust:
       - Why Rust: WhyRust.md
@@ -57,5 +53,5 @@ nav:
   - Reference:
     - Reference Topics: IntroductionToReference.md
     - Enigma Technical Overview: EnigmaOverview.md
-    - Secret Contract Enigne: SecretContractEngine.md
+    - Secret Contract Engine: SecretContractEngine.md
   - Glossary: Glossary.md

@@ -6,6 +6,21 @@ Enigma is a decentralized network that enables **Secret Contracts**. This means 
  - Enigma is **Ethereum compatible**. Secret Contracts can call any
    function inside a smart contract on Ethereum.
 
+Enigma and Ethereum work together, and separate computation and storage from consensus. 
+
+## Enigma: Compute and Storage Layer 
+
+ - **Secret Contract Engine**: Executes computations.
+ - **Peer-to-peer Network**: Propagates messages in the Enigma network.
+ - **State Management**: Stores and manages the state.
+ - **Key Management**: Stores and manages encryption, decryption and signing keys.
+ 
+
+## Ethereum: Consensus Layer 
+ -   **Shared Ledger**: Stores the worker registry, task records and proofs of completed tasks.
+ - **Consensus**: Agreement on task order and confirmation status.
+
+
 ## Enigma at a Glance 👁️
 This diagram illustrates how data flows in an Enigma-based application.
  [ INSERT DIAGRAM ] 
@@ -34,4 +49,3 @@ The **Discovery** release of Enigma has plenty of exciting new features, includi
  - *Secret inputs* to a credit-scoring algorithm
  - *Sybil-prevention via social verification*-- without exposing your
    user's data!
-
