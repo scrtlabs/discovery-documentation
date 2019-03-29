@@ -46,7 +46,7 @@ nav:
       - Fees: Fees.md
       - Key Management: KeyManagement.md
     - Deploying the Enigma Network:
-      - Deployment Methods: IntroductionToDeployment
+      - Deployment Methods: IntroductionToDeployment.md
       - Developer Mode: DeveloperMode.md
       - Public Testnet: DiscoveryTestnet.md
     - Application Design: ApplicationDesign.md
