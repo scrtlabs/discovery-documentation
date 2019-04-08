@@ -2,7 +2,7 @@
 
 
 ### Enigma Smart Contract and Library
-This repository includes the JavaScript Enigma Library, which provides the interface for secret contract and DApp developers to interact with the Enigma protocol. The source code is written in ECMAScript 6 (ES6) and comes prebundled with Webpack, and is exported in UMD format to provide universal functionality. The repository also includes more than 100 unit tests that both provide up to 98% code coverage, as well as comprehensively describes the functions provided both by the Enigma Library and the Enigma Contract.
+This repository includes the JavaScript Enigma Library, which provides the interface that secret contract and dApp developers use to interact with the Enigma protocol. The source code is written in ECMAScript 6 (ES6) and comes prebundled with Webpack, and is exported in UMD format to provide universal functionality. The repository also includes more than 100 unit tests that both provide up to 98% code coverage, as well as comprehensively describes the functions provided both by the Enigma Library and the Enigma Contract.
 
 This repository also includes the Enigma smart contract written in Solidity, which implements the consensus layer for the Discovery release of the Enigma Protocol. Due to the limitations of EVM (Etherium Virtual Machine) as well as the complexity of the contract itself, several components have been broken down into modular contracts and libraries that come together into what is referred to as the *Enigma Contract*.  One instance of this contract will be first deployed on the Ethereum testnet, and once more later on mainnet release.
 
