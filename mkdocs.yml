@@ -25,33 +25,24 @@ theme:
       - type: 'linkedin'
         link: 'https://linkedin.com/in/#'
 
+
 nav:
-  - Home: 
-    - Introduction: index.md
-    - New in Discovery: NewForDiscovery.md
-  - Getting Started:
-    - Enigma Walkthrough: Walkthrough.md
-  - Documentation:
-    - Rust:
-      - Why Rust: WhyRust.md
-      - Rust Walkthrough: RustWalkthrough.md
-      - Other Rust Resources: RustResources.md
-    - Secret Contracts:
-      - Secret Contracts: SecretContracts.md
-      - Secret Contract Walkthrough: SecretContractWalkthrough.md
-      - Examples: SecretContractExamples.md
-    - Enigma JS Library:
-      - Introduction: IntroductionToEnigmaJS.md
-      - API: API.md
-      - Fees: Fees.md
-      - Key Management: KeyManagement.md
-    - Deploying the Enigma Network:
-      - Deployment Methods: IntroductionToDeployment.md
-      - Developer Mode: DeveloperMode.md
-      - Public Testnet: DiscoveryTestnet.md
-    - Application Design: ApplicationDesign.md
+  - About Enigma: index.md
+  - About Discovery: NewForDiscovery.md
+  - Quick Start: Walkthrough.md
+  - EnigmaJS:
+    - About EnigmaJS: IntroductionToEnigmaJS.md
+    - API: API.md
+  - Secret Contracts:
+    - Overview: SecretContracts.md
+    - Examples: SecretContractExamples.md
+  - Tutorials:
+    - Learn Rust: RustWalkthrough.md
+    - Deploy Discovery: IntroductionToDeployment.md
+    - Write a Secret Contract: SecretContractWalkthrough.md
+  - FAQ: FAQ.md
   - Reference:
-    - Reference Topics: IntroductionToReference.md
+    - About Reference: IntroductionToReference.md
     - Enigma Technical Overview: EnigmaOverview.md
     - Secret Contract Engine: SecretContractEngine.md
   - Glossary: Glossary.md
