@@ -1,14 +1,31 @@
 ﻿# What is Enigma? 🤔
 Enigma is a decentralized network that enables **Secret Contracts**. This means you can create decentralized applications with end-to-end data privacy and strong correctness guarantees. 
 
- - Data inputs, and outputs are encrypted throughout-- even the nodes
-   running the computation **can't see the data**. 
- - Enigma is **Ethereum compatible**. Secret Contracts can call any
-   function inside a smart contract on Ethereum.
+ - Data inputs, and outputs are encrypted throughout. Even the nodes running the computation **can't see the data**. 
+ - Enigma is **Ethereum compatible**. Secret Contracts can call any function inside a smart contract on Ethereum.
 
-Enigma and Ethereum work together, and separate computation and storage from consensus. 
+**Ready to dive in?**
 
-## Enigma: Compute and Storage Layer 
+Get started quickly with our Quick Start guide
+Build your first secret contract
+Check out a list of contract ideas
+
+## Overview 👁️
+[insert diagram here]
+This diagram illustrates how data flows in an Enigma-based application.
+
+### Data Flow
+
+ 1. A secret contract function call is considered a single private computation or [task](http://enigma.co/protocol-discovery/glossary.html#task). Secret contracts are registered at deployment on the Enigma Contract (on Ethereum), which the Enigma network watches for new tasks. 
+ 2. These tasks are initiated (and paid for) by the end users of Ethereum dApps and are then offloaded from Ethereum into the Enigma network for computation. 
+ 3. The Enigma network then selects a [worker node](http://enigma.co/protocol-discovery/glossary.html#worker) to execute the given task in a modified Web Assembly interpreter (WASMI) running inside a Trusted Execution Environment (TEE) using Intel Software Guard Extensions (SGX) technology (also known as an [enclave](http://enigma.co/protocol-discovery/glossary.html#enclave)). 
+ 4. After computing a task, a cryptographic proof of the completed task is recorded, and eventually verified, on the Ethereum network.
+
+## Enigma and Ethereum
+
+Enigma and Ethereum work together, and separate computation and storage from consensus.
+
+### Enigma: Compute and Storage Layer 
 
  - **Secret Contract Engine**: Executes computations.
  - **Peer-to-peer Network**: Propagates messages in the Enigma network.
@@ -16,24 +33,18 @@ Enigma and Ethereum work together, and separate computation and storage from con
  - **Key Management**: Stores and manages encryption, decryption and signing keys.
  
 
-## Ethereum: Consensus Layer 
+### Ethereum: Consensus Layer 
  -   **Shared Ledger**: Stores the worker registry, task records and proofs of completed tasks.
  - **Consensus**: Agreement on task order and confirmation status.
 
 
-## Enigma at a Glance 👁️
-This diagram illustrates how data flows in an Enigma-based application.
- [ INSERT DIAGRAM ] 
- - A secret contract function call is considered a single private computation or [task](http://enigma.co/protocol-discovery/glossary.html#task). Secret contracts are registered at deployment on the Enigma Contract (on Ethereum), which the Enigma network watches for new tasks. 
- - These tasks are initiated (and paid for) by the end users of Ethereum dApps and are then offloaded from Ethereum into the Enigma network for computation.
- - The Enigma network then selects a [worker node](http://enigma.co/protocol-discovery/glossary.html#worker) to execute the given task in a modified Web Assembly interpreter (WASMI) running inside a Trusted Execution Environment (TEE) using Intel Software Guard Extensions (SGX) technology (also known as an [enclave](http://enigma.co/protocol-discovery/glossary.html#enclave)). 
- - After computing a task, a cryptographic proof of the completed task is recorded, and eventually verified, on the Ethereum network.
 
 **Key Concepts** 🤞
- - Secret Contract
+
+ - Secret Contract 
  - Task 
- - Enigma Contract 
- - Enigma JS Library 
+ - Enigma Contract  
+ - Enigma JS Library  
  - Worker Node
 
 ## What can I do with Enigma? 🛠️
