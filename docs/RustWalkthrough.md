@@ -91,4 +91,4 @@ pub fn compute_richest(&self) -> &str {
 }
 ```
 ## Summary
-Congratulations, you've just made your first secret contract library! To summarize, we first created two structs: ``MillionairesProblem`` and ``Millionaire``, then created an ``impl`` block to further the functionality of the ``MillionairesProblem``, and two methods to allow us to add a new millionaire and compute the richest millionaire.
+Congratulations, you've just made your first Rust library! To summarize, we first created two structs: ``MillionairesProblem`` and ``Millionaire``, then created an ``impl`` block to further the functionality of the ``MillionairesProblem``, and two methods to allow us to add a new millionaire and compute the richest millionaire.

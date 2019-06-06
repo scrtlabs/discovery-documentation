@@ -614,28 +614,34 @@
                 
                 <h1 id="whats-new-in-discovery">What's New in Discovery 🎁</h1>
 <p>The Discovery release of the Enigma protocol provides the following features:</p>
-<h2 id="secret-state">Secret State</h2>
+<h3 id="secret-state">Secret State</h3>
 <p>Secret contracts are capable of maintaining a state. Encrypted data persists across separate private computations or different tasks. Stateful contracts enable many more use cases than stateless computations (like secret tokens).</p>
-<h2 id="secret-contracts-are-seperate-from-smart-contracts">Secret Contracts are seperate from Smart Contracts</h2>
+<h3 id="secret-contracts-are-seperate-from-smart-contracts">Secret Contracts are seperate from Smart Contracts</h3>
 <p>The Enigma network performs computation and storage, using Ethereum only for consensus and a shared ledger. This means that secret contracts have their own runtime (modified EVM) and programming language (Rust, instead of Solidity). </p>
-<h2 id="private-outputs">Private Outputs</h2>
+<h3 id="private-outputs">Private Outputs</h3>
 <p>In addition to private inputs, the network now supports storage of computation outputs. The contract state is stored (encrypted) on-chain and results can be encrypted directly for the dApp user.</p>
-<h2 id="economic-incentives">Economic Incentives</h2>
+<h3 id="economic-incentives">Economic Incentives</h3>
 <p>Each node receives a financial reward for participating in the network.</p>
-<h2 id="gas-cost-optimization">Gas Cost Optimization</h2>
-<p>On Ethereum, gas cost is based on computation units associated with each  <a href="https://docs.google.com/spreadsheets/d/1m89CVujrQe5LAFJ8-YAUCcNK950dUzMQPMJBxRtGCqs/edit#gid=0">opcode</a>. The STORAGEADD opcode is the most expensive at 20k gas for each 32 bytes of data. Secret contracts should be significantly cheaper in gas than they were in the previous MVT release due to the following modifications:
-    &gt; 1.  Inputs are not stored in the contract, only the taskId (a hash of inputs). The taskId is generated from inputs in the worker’s enclave to ensure their integrity
-    &gt; 2.  Outputs are not stored in the contract. On chain verification of the results still takes place but using a hash of the results.</p>
-<h2 id="ethereum-integration">Ethereum Integration</h2>
-<p>These features maintain interoperability with Ethereum:
-    &gt; 1.  <em>Token Transfers</em>: Calling a payable secret contract function may involve an arbitrary ERC20 token deposit. Tokens are locked in the contract state until explicitly transferred to an Ethereum address in the secret contract business logic.
-    &gt; 2.  Function Calls: Secret Contracts may call arbitrary functions of smart contract deployed on Ethereum.</p>
-<h2 id="contract-attributes">Contract Attributes</h2>
-<p>Discovery supports the storage of system attributes (metadata) about each contract. To illustrate their utility, these attributes include but may not be limited to:
-    &gt; 1.  A list of workers assigned to each contract which is useful for key management.
-    &gt; 2.  The contract bytecode (or a reference to it)
-    &gt; 3.  A mapping between each attribute and its position in the state array.
-    &gt; 4.  Reference to external storage (like s3 or IPFS) if we build support for sealed data stored externally.</p>
+<h3 id="gas-cost-optimization">Gas Cost Optimization</h3>
+<p>On Ethereum, gas cost is based on computation units associated with each  <a href="https://docs.google.com/spreadsheets/d/1m89CVujrQe5LAFJ8-YAUCcNK950dUzMQPMJBxRtGCqs/edit#gid=0">opcode</a>. The STORAGEADD opcode is the most expensive at 20k gas for each 32 bytes of data. Secret contracts should be significantly cheaper in gas than they were in the previous MVT release due to the following modifications:</p>
+<ol>
+<li>Inputs are not stored in the contract, only the taskId (a hash of inputs). The taskId is generated from inputs in the worker’s enclave to ensure their integrity</li>
+<li>Outputs are not stored in the contract. On chain verification of the results still takes place but using a hash of the results.</li>
+</ol>
+<h3 id="ethereum-integration">Ethereum Integration</h3>
+<p>These features maintain interoperability with Ethereum:</p>
+<ol>
+<li><em>Token Transfers</em>: Calling a payable secret contract function may involve an arbitrary ERC20 token deposit. Tokens are locked in the contract state until explicitly transferred to an Ethereum address in the secret contract business logic.</li>
+<li><em>Function Calls</em>: Secret Contracts may call arbitrary functions of smart contract deployed on Ethereum.</li>
+</ol>
+<h3 id="contract-attributes">Contract Attributes</h3>
+<p>Discovery supports the storage of system attributes (metadata) about each contract. To illustrate their utility, these attributes include but may not be limited to:</p>
+<ol>
+<li>A list of workers assigned to each contract which is useful for key management.</li>
+<li>The contract bytecode (or a reference to it)</li>
+<li>A mapping between each attribute and its position in the state array.</li>
+<li>Reference to external storage (like s3 or IPFS) if we build support for sealed data stored externally.</li>
+</ol>
                 
                   
                 

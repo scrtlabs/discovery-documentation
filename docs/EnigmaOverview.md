@@ -42,8 +42,11 @@ Since secret contracts are stateful, the selected worker keeps an up-to-date cop
 results are encrypted and propagated to the network. The Enigma Library watches for the results.
 
 A computation task is only confirmed after verification on Ethereum. After computing a task, the selected worker commits a task receipt linked the task record. Unlike MVT, workers process tasks in batches instead of committing every task to Ethereum immediately. These are the triggers to commit tasks:
+
 1. the current epoch ends
+
 2. the business logic of a task calls an Ethereum smart contract
+
 
 When either trigger occurs, the worker commits a batch of all
 unconfirmed tasks stored locally. Ethereum does not store the tasks results nor the encrypted state deltas, only hashes from which nodes can verify the integrity of their own data.

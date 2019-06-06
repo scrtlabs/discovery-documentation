@@ -1,5 +1,6 @@
-﻿# Reference Documentation 📖
+﻿# Enigma Protocol Components 📖
 
+The Enigma Protocol is made up of several distinct components, each with their own repository. This section gives an overview of what is contained in each repo, and its purpose in the protocol.
 
 ### Enigma Smart Contract and Library
 This repository includes the JavaScript Enigma Library, which provides the interface that secret contract and dApp developers use to interact with the Enigma protocol. The source code is written in ECMAScript 6 (ES6) and comes prebundled with Webpack, and is exported in UMD format to provide universal functionality. The repository also includes more than 100 unit tests that both provide up to 98% code coverage, as well as comprehensively describes the functions provided both by the Enigma Library and the Enigma Contract.

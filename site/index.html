@@ -203,23 +203,49 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#overview" title="Overview 👁️" class="md-nav__link">
+    Overview 👁️
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-flow" title="Data Flow" class="md-nav__link">
+    Data Flow
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enigma-and-ethereum" title="Enigma and Ethereum" class="md-nav__link">
+    Enigma and Ethereum
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#enigma-compute-and-storage-layer" title="Enigma: Compute and Storage Layer" class="md-nav__link">
     Enigma: Compute and Storage Layer
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#ethereum-consensus-layer" title="Ethereum: Consensus Layer" class="md-nav__link">
     Ethereum: Consensus Layer
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#enigma-at-a-glance" title="Enigma at a Glance 👁️" class="md-nav__link">
-    Enigma at a Glance 👁️
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -526,23 +552,49 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#overview" title="Overview 👁️" class="md-nav__link">
+    Overview 👁️
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-flow" title="Data Flow" class="md-nav__link">
+    Data Flow
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enigma-and-ethereum" title="Enigma and Ethereum" class="md-nav__link">
+    Enigma and Ethereum
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#enigma-compute-and-storage-layer" title="Enigma: Compute and Storage Layer" class="md-nav__link">
     Enigma: Compute and Storage Layer
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#ethereum-consensus-layer" title="Ethereum: Consensus Layer" class="md-nav__link">
     Ethereum: Consensus Layer
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#enigma-at-a-glance" title="Enigma at a Glance 👁️" class="md-nav__link">
-    Enigma at a Glance 👁️
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -573,37 +625,45 @@
                 <h1 id="what-is-enigma">What is Enigma? 🤔</h1>
 <p>Enigma is a decentralized network that enables <strong>Secret Contracts</strong>. This means you can create decentralized applications with end-to-end data privacy and strong correctness guarantees. </p>
 <ul>
-<li>Data inputs, and outputs are encrypted throughout-- even the nodes
-   running the computation <strong>can't see the data</strong>. </li>
-<li>Enigma is <strong>Ethereum compatible</strong>. Secret Contracts can call any
-   function inside a smart contract on Ethereum.</li>
+<li>Data inputs, and outputs are encrypted throughout. Even the nodes running the computation <strong>can't see the data</strong>. </li>
+<li>Enigma is <strong>Ethereum compatible</strong>. Secret Contracts can call any function inside a smart contract on Ethereum.</li>
 </ul>
-<p>Enigma and Ethereum work together, and separate computation and storage from consensus. </p>
-<h2 id="enigma-compute-and-storage-layer">Enigma: Compute and Storage Layer</h2>
+<p><strong>Ready to dive in?</strong></p>
+<p>Get started quickly with our Quick Start guide
+Build your first secret contract
+Check out a list of contract ideas</p>
+<h2 id="overview">Overview 👁️</h2>
+<p>[insert diagram here]
+This diagram illustrates how data flows in an Enigma-based application.</p>
+<h3 id="data-flow">Data Flow</h3>
+<ol>
+<li>A secret contract function call is considered a single private computation or <a href="http://enigma.co/protocol-discovery/glossary.html#task">task</a>. Secret contracts are registered at deployment on the Enigma Contract (on Ethereum), which the Enigma network watches for new tasks. </li>
+<li>These tasks are initiated (and paid for) by the end users of Ethereum dApps and are then offloaded from Ethereum into the Enigma network for computation. </li>
+<li>The Enigma network then selects a <a href="http://enigma.co/protocol-discovery/glossary.html#worker">worker node</a> to execute the given task in a modified Web Assembly interpreter (WASMI) running inside a Trusted Execution Environment (TEE) using Intel Software Guard Extensions (SGX) technology (also known as an <a href="http://enigma.co/protocol-discovery/glossary.html#enclave">enclave</a>). </li>
+<li>After computing a task, a cryptographic proof of the completed task is recorded, and eventually verified, on the Ethereum network.</li>
+</ol>
+<h2 id="enigma-and-ethereum">Enigma and Ethereum</h2>
+<p>Enigma and Ethereum work together, and separate computation and storage from consensus.</p>
+<h3 id="enigma-compute-and-storage-layer">Enigma: Compute and Storage Layer</h3>
 <ul>
 <li><strong>Secret Contract Engine</strong>: Executes computations.</li>
 <li><strong>Peer-to-peer Network</strong>: Propagates messages in the Enigma network.</li>
 <li><strong>State Management</strong>: Stores and manages the state.</li>
 <li><strong>Key Management</strong>: Stores and manages encryption, decryption and signing keys.</li>
 </ul>
-<h2 id="ethereum-consensus-layer">Ethereum: Consensus Layer</h2>
+<h3 id="ethereum-consensus-layer">Ethereum: Consensus Layer</h3>
 <ul>
 <li><strong>Shared Ledger</strong>: Stores the worker registry, task records and proofs of completed tasks.</li>
 <li><strong>Consensus</strong>: Agreement on task order and confirmation status.</li>
 </ul>
-<h2 id="enigma-at-a-glance">Enigma at a Glance 👁️</h2>
-<p>This diagram illustrates how data flows in an Enigma-based application.
- [ INSERT DIAGRAM ] 
- - A secret contract function call is considered a single private computation or <a href="http://enigma.co/protocol-discovery/glossary.html#task">task</a>. Secret contracts are registered at deployment on the Enigma Contract (on Ethereum), which the Enigma network watches for new tasks. 
- - These tasks are initiated (and paid for) by the end users of Ethereum dApps and are then offloaded from Ethereum into the Enigma network for computation.
- - The Enigma network then selects a <a href="http://enigma.co/protocol-discovery/glossary.html#worker">worker node</a> to execute the given task in a modified Web Assembly interpreter (WASMI) running inside a Trusted Execution Environment (TEE) using Intel Software Guard Extensions (SGX) technology (also known as an <a href="http://enigma.co/protocol-discovery/glossary.html#enclave">enclave</a>). 
- - After computing a task, a cryptographic proof of the completed task is recorded, and eventually verified, on the Ethereum network.</p>
-<p><strong>Key Concepts</strong> 🤞
- - Secret Contract
- - Task 
- - Enigma Contract 
- - Enigma JS Library 
- - Worker Node</p>
+<p><strong>Key Concepts</strong> 🤞</p>
+<ul>
+<li>Secret Contract </li>
+<li>Task </li>
+<li>Enigma Contract  </li>
+<li>Enigma JS Library  </li>
+<li>Worker Node</li>
+</ul>
 <h2 id="what-can-i-do-with-enigma">What can I do with Enigma? 🛠️</h2>
 <p>The <strong>Discovery</strong> release of Enigma has plenty of exciting new features, including <strong>secret state</strong>, Rust-based secret contracts, private outputs, and more. Some of the applications we're excited about include:</p>
 <ul>

@@ -6,9 +6,9 @@ Enigma is a decentralized network that enables **Secret Contracts**. This means 
 
 **Ready to dive in?**
 
-Get started quickly with our Quick Start guide
-Build your first secret contract
-Check out a list of contract ideas
+- Get started quickly with our Quick Start guide
+- Build your first secret contract
+- Check out some ideas for what to build with Enigma
 
 ## Overview 👁️
 [insert diagram here]

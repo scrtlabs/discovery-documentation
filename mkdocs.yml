@@ -42,7 +42,8 @@ nav:
     - Write a Secret Contract: SecretContractWalkthrough.md
   - FAQ: FAQ.md
   - Reference:
-    - About Reference: IntroductionToReference.md
+    - Enigma Components: IntroductionToReference.md
     - Enigma Technical Overview: EnigmaOverview.md
     - Secret Contract Engine: SecretContractEngine.md
+    - Key Management: KeyManagement.md
   - Glossary: Glossary.md
