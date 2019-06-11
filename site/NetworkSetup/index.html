@@ -36,7 +36,7 @@
     
     
       
-        <title>FAQ - Enigma Protocol</title>
+        <title>Deploy Discovery - Enigma Protocol</title>
       
     
     
@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#discovery-faq" tabindex="1" class="md-skip">
+      <a href="#network-setup" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -108,7 +108,7 @@
               Enigma Protocol
             </span>
             <span class="md-header-nav__topic">
-              FAQ
+              Deploy Discovery
             </span>
           
         </div>
@@ -306,10 +306,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
     
     <label class="md-nav__link" for="nav-6">
       Tutorials
@@ -337,11 +339,49 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../NetworkSetup/" title="Deploy Discovery" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Deploy Discovery
+      </label>
+    
+    <a href="./" title="Deploy Discovery" class="md-nav__link md-nav__link--active">
       Deploy Discovery
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-developer-environment" title="Set up developer environment" class="md-nav__link">
+    Set up developer environment
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -366,177 +406,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        FAQ
-      </label>
-    
-    <a href="./" title="FAQ" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../FAQ/" title="FAQ" class="md-nav__link">
       FAQ
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#data" title="Data" class="md-nav__link">
-    Data
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-is-the-size-limit-for-data-input-to-a-secret-computation" title="What is the size limit for data input to a secret computation?" class="md-nav__link">
-    What is the size limit for data input to a secret computation?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#does-encrypted-data-have-to-be-passed-through-an-ethereum-contract-before-it-can-be-computed-on" title="Does encrypted data have to be passed through an Ethereum contract before it can be computed on?" class="md-nav__link">
-    Does encrypted data have to be passed through an Ethereum contract before it can be computed on?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#can-encrypted-data-be-stored-on-the-enigma-network" title="Can encrypted data be stored on the Enigma network?" class="md-nav__link">
-    Can encrypted data be stored on the Enigma network?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nodes" title="Nodes" class="md-nav__link">
-    Nodes
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-does-enigma-protect-against-side-channel-attacks-like-foreshadow-and-spectre" title="How does Enigma protect against side-channel attacks like Foreshadow and Spectre?" class="md-nav__link">
-    How does Enigma protect against side-channel attacks like Foreshadow and Spectre?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-is-data-shared-between-nodes" title="How is data shared between nodes?" class="md-nav__link">
-    How is data shared between nodes?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ethereum" title="Ethereum" class="md-nav__link">
-    Ethereum
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#will-the-discovery-release-be-on-a-public-ethereum-testnet-ie-rinkebyropstenkovan" title="Will the Discovery release be on a public Ethereum testnet i.e., Rinkeby/Ropsten/Kovan?" class="md-nav__link">
-    Will the Discovery release be on a public Ethereum testnet i.e., Rinkeby/Ropsten/Kovan?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#will-we-be-able-to-swap-tokens-for-eng-easily-to-facilitate-payment" title="Will we be able to swap tokens for ENG easily to facilitate payment?" class="md-nav__link">
-    Will we be able to swap tokens for ENG easily to facilitate payment?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#secret-contracts" title="Secret Contracts" class="md-nav__link">
-    Secret Contracts
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#will-discovery-contracts-be-forward-compatible" title="Will Discovery contracts be forward-compatible" class="md-nav__link">
-    Will Discovery contracts be forward-compatible
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-languages-are-supported-for-secret-contracts" title="What languages are supported for secret contracts?" class="md-nav__link">
-    What languages are supported for secret contracts?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#oracles" title="Oracles" class="md-nav__link">
-    Oracles
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-do-i-get-oracle-data-into-a-computation" title="How do I get oracle data into a computation?" class="md-nav__link">
-    How do I get oracle data into a computation?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -645,137 +519,9 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#data" title="Data" class="md-nav__link">
-    Data
+  <a href="#set-up-developer-environment" title="Set up developer environment" class="md-nav__link">
+    Set up developer environment
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-is-the-size-limit-for-data-input-to-a-secret-computation" title="What is the size limit for data input to a secret computation?" class="md-nav__link">
-    What is the size limit for data input to a secret computation?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#does-encrypted-data-have-to-be-passed-through-an-ethereum-contract-before-it-can-be-computed-on" title="Does encrypted data have to be passed through an Ethereum contract before it can be computed on?" class="md-nav__link">
-    Does encrypted data have to be passed through an Ethereum contract before it can be computed on?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#can-encrypted-data-be-stored-on-the-enigma-network" title="Can encrypted data be stored on the Enigma network?" class="md-nav__link">
-    Can encrypted data be stored on the Enigma network?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nodes" title="Nodes" class="md-nav__link">
-    Nodes
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-does-enigma-protect-against-side-channel-attacks-like-foreshadow-and-spectre" title="How does Enigma protect against side-channel attacks like Foreshadow and Spectre?" class="md-nav__link">
-    How does Enigma protect against side-channel attacks like Foreshadow and Spectre?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-is-data-shared-between-nodes" title="How is data shared between nodes?" class="md-nav__link">
-    How is data shared between nodes?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ethereum" title="Ethereum" class="md-nav__link">
-    Ethereum
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#will-the-discovery-release-be-on-a-public-ethereum-testnet-ie-rinkebyropstenkovan" title="Will the Discovery release be on a public Ethereum testnet i.e., Rinkeby/Ropsten/Kovan?" class="md-nav__link">
-    Will the Discovery release be on a public Ethereum testnet i.e., Rinkeby/Ropsten/Kovan?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#will-we-be-able-to-swap-tokens-for-eng-easily-to-facilitate-payment" title="Will we be able to swap tokens for ENG easily to facilitate payment?" class="md-nav__link">
-    Will we be able to swap tokens for ENG easily to facilitate payment?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#secret-contracts" title="Secret Contracts" class="md-nav__link">
-    Secret Contracts
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#will-discovery-contracts-be-forward-compatible" title="Will Discovery contracts be forward-compatible" class="md-nav__link">
-    Will Discovery contracts be forward-compatible
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-languages-are-supported-for-secret-contracts" title="What languages are supported for secret contracts?" class="md-nav__link">
-    What languages are supported for secret contracts?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#oracles" title="Oracles" class="md-nav__link">
-    Oracles
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-do-i-get-oracle-data-into-a-computation" title="How do I get oracle data into a computation?" class="md-nav__link">
-    How do I get oracle data into a computation?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -796,42 +542,36 @@
               
                 
                 
-                <h1 id="discovery-faq">Discovery FAQ</h1>
-<h2 id="data">Data</h2>
-<h3 id="what-is-the-size-limit-for-data-input-to-a-secret-computation">What is the size limit for data input to a secret computation?</h3>
-<p>Currently, the size limit is 1 MB. We expect this number to be larger very soon. </p>
-<h3 id="does-encrypted-data-have-to-be-passed-through-an-ethereum-contract-before-it-can-be-computed-on">Does encrypted data have to be passed through an Ethereum contract before it can be computed on?</h3>
-<p>The Discovery release uses "Task Records" to track computation tasks on Ethereum. A Task Record is a hash of all the inputs to a secret contract. It takes up significantly less space than raw data would. These hashed Task Records are submitted to Ethereum at the same time as the encrypted Task data is submitted to Enigma. </p>
-<h3 id="can-encrypted-data-be-stored-on-the-enigma-network">Can encrypted data be stored on the Enigma network?</h3>
-<p>Yes, Secret Contracts are stateful in the Discovery release. </p>
-<h2 id="nodes">Nodes</h2>
-<h3 id="how-does-enigma-protect-against-side-channel-attacks-like-foreshadow-and-spectre">How does Enigma protect against side-channel attacks like Foreshadow and Spectre?</h3>
-<p>This is a class of attack deployed against Trusted Execution Environments. In addition to Intel's protections against these attacks, Enigma provides the following features:</p>
+                <h1 id="network-setup">Network Setup</h1>
+<p>In this tutorial, you will install and set up the Enigma developer testnet in software mode (appropriate for computers without SGX hardware support)</p>
+<h2 id="set-up-developer-environment">Set up developer environment</h2>
 <ol>
+<li><code>npm i -g @enigmampc/discovery-cli</code> 
+Uses npm to globally install the  <code>discovery-cli</code> , a command line interface (CLI) for the Enigma protocol’s Discovery release dev environment</li>
+<li>Create and navigate to a directory in which we will write our project code:<br />
+<code>mkdir &lt;path&gt;/millionaires_problem_demo  
+    cd &lt;path&gt;/millionaires_problem_demo</code></li>
 <li>
-<p>Randomly selected nodes: A worker is never guaranteed to be selected for a task, increasing the cost and decreasing the potential value of executing a side-channel attack. </p>
+<p>Initialize this directory as an Enigma project by running  <code>discovery init</code>. 
+This command pulls the necessary pre-built docker images to     run the Enigma testnet locally. </p>
 </li>
 <li>
-<p>Enigma Attestation Process: Enigma has streamlined a version of the Intel Attestation service for nodes. </p>
+<p>When asked whether to set up the environment in the current folder, choose  <code>Y</code>  for yes. </p>
 </li>
-<li>
-<p>Local consensus: nodes agree on the result of a computation, ensuring that a worker is not returning an incorrect result. (NOTE: this is not part of the initial Discovery Developer Release)</p>
-</li>
+<li>When asked whether to use hardware mode (HW) or simulation mode (SW), we will select  <code>sw</code>. </li>
+<li>Choose  <code>Y</code>  to allow the docker images to be pulled to your machine — if this is your first time creating an Enigma project and/or pulling these docker images, this may take ~15–20 minutes.
+This process has auto-generated scaffolding that should be familiar to users with experience working with Truffle).</li>
+<li><code>build</code>: All of our compiled build files are written here and organized by type depending on whether they are Enigma protocol contracts, Ethereum smart contracts, or Enigma secret contracts (often abbreviated ESC as a heads up)</li>
+<li><code>migrations</code>: Our migrations files, much like you would see in a Truffle environment</li>
+<li><code>smart_contracts</code>: Any Ethereum smart contracts central to your dApp logic, with an existing example contract,  <code>Sample.sol</code></li>
+<li><code>secret_contracts</code>: Any Enigma secret contracts central to your dApp logic, with an existing example Rust library  <code>simple_addition</code>. We have included a  <code>Cargo.toml.template</code>  file which you can use as a foundation for your custom library’s  <code>Cargo.toml</code>  specification.</li>
+<li><code>test</code>: Any unit tests for your contracts</li>
 </ol>
-<h3 id="how-is-data-shared-between-nodes">How is data shared between nodes?</h3>
-<h2 id="ethereum">Ethereum</h2>
-<h3 id="will-the-discovery-release-be-on-a-public-ethereum-testnet-ie-rinkebyropstenkovan">Will the Discovery release be on a public Ethereum testnet i.e., Rinkeby/Ropsten/Kovan?</h3>
-<p>Yes, we will launch Discovery on a public testnet prior to mainnet launch. However, the developer testnet release is only deployed locally. </p>
-<h3 id="will-we-be-able-to-swap-tokens-for-eng-easily-to-facilitate-payment">Will we be able to swap tokens for ENG easily to facilitate payment?</h3>
-<p>Supporting token abstraction is a high-priority goal, but is not included in the Discovery developer release. </p>
-<h2 id="secret-contracts">Secret Contracts</h2>
-<h3 id="will-discovery-contracts-be-forward-compatible">Will Discovery contracts be forward-compatible</h3>
-<p>Yes. Future iterations of the network will also support Rust-based contracts, and we are aiming for forward compatibility in all contracts.</p>
-<h3 id="what-languages-are-supported-for-secret-contracts">What languages are supported for secret contracts?</h3>
-<p>Secret contracts are written using Rust.</p>
-<h2 id="oracles">Oracles</h2>
-<h3 id="how-do-i-get-oracle-data-into-a-computation">How do I get oracle data into a computation?</h3>
-<p>We currently do not support TLS or HTTP requests within a computation. We suggest that developers utilize a relayer model where applicable to obtain and submit this type of data. </p>
+<p>Within our Discovery-initialized project, you are able to:</p>
+<ul>
+<li>Start the network — <code>discovery start</code></li>
+<li>Stop the network — <code>discovery stop</code></li>
+</ul>
                 
                   
                 
@@ -852,7 +592,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../Walkthrough_secretContract/" title="Write a Secret Contract" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../RustWalkthrough/" title="Learn Rust" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -861,19 +601,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Write a Secret Contract
+                Learn Rust
               </span>
             </div>
           </a>
         
         
-          <a href="../IntroductionToReference/" title="Enigma Components" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../Walkthrough_secretContract/" title="Write a Secret Contract" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Enigma Components
+                Write a Secret Contract
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

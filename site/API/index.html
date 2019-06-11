@@ -317,6 +317,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#gettaskoutputhashtask-promise" title="getTaskOutputHash(task) ⇒ Promise" class="md-nav__link">
+    getTaskOutputHash(task) ⇒ Promise
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#getreportcustodian-promise" title="getReport(custodian) ⇒ Promise" class="md-nav__link">
     getReport(custodian) ⇒ Promise
   </a>
@@ -347,6 +354,13 @@
         <li class="md-nav__item">
   <a href="#gettaskresulttask-eventemitter" title="getTaskResult(task) ⇒ EventEmitter" class="md-nav__link">
     getTaskResult(task) ⇒ EventEmitter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decrypttaskresulttask-task" title="decryptTaskResult(task) ⇒ Task" class="md-nav__link">
+    decryptTaskResult(task) ⇒ Task
   </a>
   
 </li>
@@ -508,7 +522,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../IntroductionToDeployment/" title="Deploy Discovery" class="md-nav__link">
+    <a href="../NetworkSetup/" title="Deploy Discovery" class="md-nav__link">
       Deploy Discovery
     </a>
   </li>
@@ -520,7 +534,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../SecretContractWalkthrough/" title="Write a Secret Contract" class="md-nav__link">
+    <a href="../Walkthrough_secretContract/" title="Write a Secret Contract" class="md-nav__link">
       Write a Secret Contract
     </a>
   </li>
@@ -695,6 +709,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#gettaskoutputhashtask-promise" title="getTaskOutputHash(task) ⇒ Promise" class="md-nav__link">
+    getTaskOutputHash(task) ⇒ Promise
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#getreportcustodian-promise" title="getReport(custodian) ⇒ Promise" class="md-nav__link">
     getReport(custodian) ⇒ Promise
   </a>
@@ -725,6 +746,13 @@
         <li class="md-nav__item">
   <a href="#gettaskresulttask-eventemitter" title="getTaskResult(task) ⇒ EventEmitter" class="md-nav__link">
     getTaskResult(task) ⇒ EventEmitter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decrypttaskresulttask-task" title="decryptTaskResult(task) ⇒ Task" class="md-nav__link">
+    decryptTaskResult(task) ⇒ Task
   </a>
   
 </li>
@@ -806,326 +834,608 @@
                 
                 <h2 id="functions">Functions</h2>
 <dl>
-
 <dt><a href="#admin">admin()</a></dt>
-
 <dd><p>Initialize the worker-specific admin features</p>
-
 </dd>
-
 <dt><a href="#createContracts">createContracts(enigmaContractAddr, tokenContractAddr)</a></dt>
-
 <dd><p>Initialize the Enigma and Enigma token contracts</p>
-
 </dd>
-
 <dt><a href="#createTask">createTask(fn, args, gasLimit, gasPx, sender, scAddrOrPreCode, isContractDeploymentTask)</a> ⇒ <code>Task</code></dt>
-
 <dd><p>Create a base Task - a wrapper for a task (either contract deployments or regular tasks)</p>
-
 </dd>
-
 <dt><a href="#createTaskRecord">createTaskRecord(task)</a> ⇒ <code>EventEmitter</code></dt>
-
 <dd><p>Create and store a task record on chain (ETH). Task records are necessary for collecting the ENG computation fee
-
 and computing the immutable taskId (a unique value for each task computed from hash(hash(encrypted function
-
 signature, encrypted ABI-encoded arguments, gas limit, gas price, user&#39;s public key), user&#39;s nonce value
-
 monotonically increasing for every task deployment). Thus, task records have important implications for task
-
 ordering, fee payments, and verification.</p>
-
 </dd>
-
 <dt><a href="#createTaskRecords">createTaskRecords(tasks)</a> ⇒ <code>EventEmitter</code></dt>
-
 <dd><p>Create and store task records on chain (ETH). Task records are necessary for collecting the ENG computation fee
-
 and computing the immutable taskId (a unique value for each task computed from hash(hash(encrypted function
-
 signature, encrypted ABI-encoded arguments, gas limit, gas price, user&#39;s public key), user&#39;s nonce value
-
 monotonically increasing for every task deployment). Thus, task records have important implications for task
-
 ordering, fee payments, and verification.</p>
-
 </dd>
-
 <dt><a href="#getTaskRecordStatus">getTaskRecordStatus(task)</a> ⇒ <code>Promise</code></dt>
-
 <dd><p>Get the Task&#39;s task record status from Ethereum</p>
-
 </dd>
-
+<dt><a href="#getTaskOutputHash">getTaskOutputHash(task)</a> ⇒ <code>Promise</code></dt>
+<dd><p>Fetch output hash at specified index position</p>
+</dd>
 <dt><a href="#getReport">getReport(custodian)</a> ⇒ <code>Promise</code></dt>
-
 <dd><p>Find SGX report</p>
-
 </dd>
-
 <dt><a href="#getWorkerParams">getWorkerParams(blockNumber)</a> ⇒ <code>Promise</code></dt>
-
 <dd><p>Given a block number, obtain the worker parameters. These parameters remain the same for a given secret
-
 contract and epoch (fixed number of blocks). These parameters are cached until the epoch changes.</p>
-
 </dd>
-
 <dt><a href="#selectWorkerGroup">selectWorkerGroup(scAddr, params, workerGroupSize)</a> ⇒ <code>Array</code></dt>
-
 <dd><p>Select the workers weighted-randomly based on the staked token amount that will run the computation task</p>
-
 </dd>
-
 <dt><a href="#sendTaskInput">sendTaskInput(task)</a> ⇒ <code>EventEmitter</code></dt>
-
 <dd><p>Send Task to Enigma p2p network for computation</p>
-
 </dd>
-
 <dt><a href="#getTaskResult">getTaskResult(task)</a> ⇒ <code>EventEmitter</code></dt>
-
 <dd><p>Get task result from p2p network</p>
-
 </dd>
-
+<dt><a href="#decryptTaskResult">decryptTaskResult(task)</a> ⇒ <code>Task</code></dt>
+<dd><p>Decrypt task result</p>
+</dd>
 <dt><a href="#pollTaskStatusGen">pollTaskStatusGen(task, withResult)</a></dt>
-
 <dd><p>Generator function for polling the Enigma p2p network for task status</p>
-
 </dd>
-
 <dt><a href="#innerPollTaskStatus">innerPollTaskStatus(task, generator, emitter)</a></dt>
-
 <dd><p>Inner poll status function that continues to poll the Enigma p2p network until the task has been verified</p>
-
 </dd>
-
 <dt><a href="#pollTaskStatus">pollTaskStatus(task, withResult)</a> ⇒ <code>EventEmitter</code></dt>
-
 <dd><p>Poll the Enigma p2p network for a TaskInput&#39;s status</p>
-
 </dd>
-
 <dt><a href="#serializeTask">serializeTask(task)</a> ⇒ <code>Object</code></dt>
-
 <dd><p>Serialize Task for submission to the Enigma p2p network</p>
-
 </dd>
-
 <dt><a href="#obtainTaskKeyPair">obtainTaskKeyPair()</a> ⇒ <code>Object</code></dt>
-
 <dd><p>Deterministically generate a key-secret pair necessary for deriving a shared encryption key with the selected
-
 worker. This pair will be stored in local storage for quick retrieval.</p>
-
 </dd>
-
 <dt><a href="#deploySecretContract">deploySecretContract(fn, args, gasLimit, gasPx, sender, preCode)</a> ⇒ <code>Task</code></dt>
-
 <dd><p>Create a task to deploy a secret contract - creates base task, creates task record, and sends task to the
-
 Enigma network.</p>
-
 </dd>
-
 <dt><a href="#computeTask">computeTask(fn, args, gasLimit, gasPx, sender, scAddr)</a> ⇒ <code>Task</code></dt>
-
 <dd><p>Create a compute task - creates base task, creates task record, and sends task to the Enigma network.</p>
-
 </dd>
-
 <dt><a href="#version">version()</a> ⇒ <code>string</code></dt>
-
 <dd><p>Return the version number of the library</p>
-
 </dd>
-
 </dl>
 
 <p><a name="admin"></a></p>
 <h2 id="admin">admin()</h2>
 <p>Initialize the worker-specific admin features</p>
-<p><strong>Kind</strong>: global function</p>
-<p><a name="createContracts"></a></p>
+<p><strong>Kind</strong>: global function<br />
+<a name="createContracts"></a></p>
 <h2 id="createcontractsenigmacontractaddr-tokencontractaddr">createContracts(enigmaContractAddr, tokenContractAddr)</h2>
 <p>Initialize the Enigma and Enigma token contracts</p>
-<p><strong>Kind</strong>: global function</p>
-<p>| Param | Type |</p>
-<p>| --- | --- |</p>
-<p>| enigmaContractAddr | <code>string</code> |</p>
-<p>| tokenContractAddr | <code>string</code> |</p>
+<p><strong>Kind</strong>: global function  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enigmaContractAddr</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>tokenContractAddr</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
 <p><a name="createTask"></a></p>
 <h2 id="createtaskfn-args-gaslimit-gaspx-sender-scaddrorprecode-iscontractdeploymenttask-task">createTask(fn, args, gasLimit, gasPx, sender, scAddrOrPreCode, isContractDeploymentTask) ⇒ <code>Task</code></h2>
 <p>Create a base Task - a wrapper for a task (either contract deployments or regular tasks)</p>
-<p><strong>Kind</strong>: global function</p>
-<p><strong>Returns</strong>: <code>Task</code> - Task with base attributes to be used for remainder of task lifecycle</p>
-<p>| Param | Type | Description |</p>
-<p>| --- | --- | --- |</p>
-<p>| fn | <code>string</code> | Function name |</p>
-<p>| args | <code>Array</code> | Inputs for task in the form of [[arg1, '<type>'], ..., [argn, '<type>']] |</p>
-<p>| gasLimit | <code>Number</code> | ENG gas limit for task computation |</p>
-<p>| gasPx | <code>Number</code> | ENG gas price for task computation |</p>
-<p>| sender | <code>string</code> | ETH address for task sender |</p>
-<p>| scAddrOrPreCode | <code>string</code> | Either secret contract address or precode, depending on if user is running a contract deployment or regular task |</p>
-<p>| isContractDeploymentTask | <code>boolean</code> | Is this task a contract deployment task (if not, it's a regular task) |</p>
+<p><strong>Kind</strong>: global function<br />
+<strong>Returns</strong>: <code>Task</code> - Task with base attributes to be used for remainder of task lifecycle  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fn</td>
+<td><code>string</code></td>
+<td>Function name</td>
+</tr>
+<tr>
+<td>args</td>
+<td><code>Array</code></td>
+<td>Inputs for task in the form of [[arg1, '<type>'], ..., [argn, '<type>']]</td>
+</tr>
+<tr>
+<td>gasLimit</td>
+<td><code>Number</code></td>
+<td>ENG gas limit for task computation</td>
+</tr>
+<tr>
+<td>gasPx</td>
+<td><code>Number</code></td>
+<td>ENG gas price for task computation</td>
+</tr>
+<tr>
+<td>sender</td>
+<td><code>string</code></td>
+<td>ETH address for task sender</td>
+</tr>
+<tr>
+<td>scAddrOrPreCode</td>
+<td><code>string</code></td>
+<td>Either secret contract address or precode, depending on if user is running a contract deployment or regular task</td>
+</tr>
+<tr>
+<td>isContractDeploymentTask</td>
+<td><code>boolean</code></td>
+<td>Is this task a contract deployment task (if not, it's a regular task)</td>
+</tr>
+</tbody>
+</table>
 <p><a name="createTaskRecord"></a></p>
 <h2 id="createtaskrecordtask-eventemitter">createTaskRecord(task) ⇒ <code>EventEmitter</code></h2>
-<p>Create and store a task record on chain (ETH). Task records are necessary for collecting the ENG computation fee</p>
-<p>and computing the immutable taskId (a unique value for each task computed from hash(hash(encrypted function</p>
-<p>signature, encrypted ABI-encoded arguments, gas limit, gas price, user's public key), user's nonce value</p>
-<p>monotonically increasing for every task deployment). Thus, task records have important implications for task</p>
-<p>ordering, fee payments, and verification.</p>
-<p><strong>Kind</strong>: global function</p>
-<p><strong>Returns</strong>: <code>EventEmitter</code> - EventEmitter to be listened to track creation of task record. Emits a Task with task</p>
-<p>record creation attributes to be used for remainder of task lifecycle</p>
-<p>| Param | Type | Description |</p>
-<p>| --- | --- | --- |</p>
-<p>| task | <code>Task</code> | Task wrapper for contract deployment and regular tasks |</p>
+<p>Create and store a task record on chain (ETH). Task records are necessary for collecting the ENG computation fee
+and computing the immutable taskId (a unique value for each task computed from hash(hash(encrypted function
+signature, encrypted ABI-encoded arguments, gas limit, gas price, user's public key), user's nonce value
+monotonically increasing for every task deployment). Thus, task records have important implications for task
+ordering, fee payments, and verification.</p>
+<p><strong>Kind</strong>: global function<br />
+<strong>Returns</strong>: <code>EventEmitter</code> - EventEmitter to be listened to track creation of task record. Emits a Task with task
+record creation attributes to be used for remainder of task lifecycle  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>task</td>
+<td><code>Task</code></td>
+<td>Task wrapper for contract deployment and regular tasks</td>
+</tr>
+</tbody>
+</table>
 <p><a name="createTaskRecords"></a></p>
 <h2 id="createtaskrecordstasks-eventemitter">createTaskRecords(tasks) ⇒ <code>EventEmitter</code></h2>
-<p>Create and store task records on chain (ETH). Task records are necessary for collecting the ENG computation fee</p>
-<p>and computing the immutable taskId (a unique value for each task computed from hash(hash(encrypted function</p>
-<p>signature, encrypted ABI-encoded arguments, gas limit, gas price, user's public key), user's nonce value</p>
-<p>monotonically increasing for every task deployment). Thus, task records have important implications for task</p>
-<p>ordering, fee payments, and verification.</p>
-<p><strong>Kind</strong>: global function</p>
-<p><strong>Returns</strong>: <code>EventEmitter</code> - EventEmitter to be listened to track creation of task records. Emits Tasks with task</p>
-<p>record creation attributes to be used for remainder of task lifecycle</p>
-<p>| Param | Type | Description |</p>
-<p>| --- | --- | --- |</p>
-<p>| tasks | <code>Array</code> | Task wrappers for contract deployment and regular tasks |</p>
+<p>Create and store task records on chain (ETH). Task records are necessary for collecting the ENG computation fee
+and computing the immutable taskId (a unique value for each task computed from hash(hash(encrypted function
+signature, encrypted ABI-encoded arguments, gas limit, gas price, user's public key), user's nonce value
+monotonically increasing for every task deployment). Thus, task records have important implications for task
+ordering, fee payments, and verification.</p>
+<p><strong>Kind</strong>: global function<br />
+<strong>Returns</strong>: <code>EventEmitter</code> - EventEmitter to be listened to track creation of task records. Emits Tasks with task
+record creation attributes to be used for remainder of task lifecycle  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tasks</td>
+<td><code>Array</code></td>
+<td>Task wrappers for contract deployment and regular tasks</td>
+</tr>
+</tbody>
+</table>
 <p><a name="getTaskRecordStatus"></a></p>
 <h2 id="gettaskrecordstatustask-promise">getTaskRecordStatus(task) ⇒ <code>Promise</code></h2>
 <p>Get the Task's task record status from Ethereum</p>
-<p><strong>Kind</strong>: global function</p>
-<p><strong>Returns</strong>: <code>Promise</code> - Resolves to Task wrapper with updated ethStatus and proof properties</p>
-<p>| Param | Type | Description |</p>
-<p>| --- | --- | --- |</p>
-<p>| task | <code>Task</code> | Task wrapper for contract deployment and regular tasks |</p>
+<p><strong>Kind</strong>: global function<br />
+<strong>Returns</strong>: <code>Promise</code> - Resolves to Task wrapper with updated ethStatus and proof properties  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>task</td>
+<td><code>Task</code></td>
+<td>Task wrapper for contract deployment and regular tasks</td>
+</tr>
+</tbody>
+</table>
+<p><a name="getTaskOutputHash"></a></p>
+<h2 id="gettaskoutputhashtask-promise">getTaskOutputHash(task) ⇒ <code>Promise</code></h2>
+<p>Fetch output hash at specified index position</p>
+<p><strong>Kind</strong>: global function<br />
+<strong>Returns</strong>: <code>Promise</code> - - Resolves to output hash at the specified position  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>task</td>
+<td><code>Task</code></td>
+<td>Task wrapper</td>
+</tr>
+</tbody>
+</table>
 <p><a name="getReport"></a></p>
 <h2 id="getreportcustodian-promise">getReport(custodian) ⇒ <code>Promise</code></h2>
 <p>Find SGX report</p>
-<p><strong>Kind</strong>: global function</p>
-<p><strong>Returns</strong>: <code>Promise</code> - Resolves to SGX report for the worker</p>
-<p>| Param | Type | Description |</p>
-<p>| --- | --- | --- |</p>
-<p>| custodian | <code>string</code> | Worker's address |</p>
+<p><strong>Kind</strong>: global function<br />
+<strong>Returns</strong>: <code>Promise</code> - Resolves to SGX report for the worker  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>custodian</td>
+<td><code>string</code></td>
+<td>Worker's address</td>
+</tr>
+</tbody>
+</table>
 <p><a name="getWorkerParams"></a></p>
 <h2 id="getworkerparamsblocknumber-promise">getWorkerParams(blockNumber) ⇒ <code>Promise</code></h2>
-<p>Given a block number, obtain the worker parameters. These parameters remain the same for a given secret</p>
-<p>contract and epoch (fixed number of blocks). These parameters are cached until the epoch changes.</p>
-<p><strong>Kind</strong>: global function</p>
-<p><strong>Returns</strong>: <code>Promise</code> - Resolves to the worker params, which includes a seed (random int generated from the principal</p>
-<p>node), first block number for the epoch, list of active work addresses (ordered list of workers that were logged</p>
-<p>in at the start of the epoch), and list of active worker balances</p>
-<p>| Param | Type | Description |</p>
-<p>| --- | --- | --- |</p>
-<p>| blockNumber | <code>int</code> | Block number of task record's mining |</p>
+<p>Given a block number, obtain the worker parameters. These parameters remain the same for a given secret
+contract and epoch (fixed number of blocks). These parameters are cached until the epoch changes.</p>
+<p><strong>Kind</strong>: global function<br />
+<strong>Returns</strong>: <code>Promise</code> - Resolves to the worker params, which includes a seed (random int generated from the principal
+node), first block number for the epoch, list of active work addresses (ordered list of workers that were logged
+in at the start of the epoch), and list of active worker balances  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blockNumber</td>
+<td><code>int</code></td>
+<td>Block number of task record's mining</td>
+</tr>
+</tbody>
+</table>
 <p><a name="selectWorkerGroup"></a></p>
 <h2 id="selectworkergroupscaddr-params-workergroupsize-array">selectWorkerGroup(scAddr, params, workerGroupSize) ⇒ <code>Array</code></h2>
 <p>Select the workers weighted-randomly based on the staked token amount that will run the computation task</p>
-<p><strong>Kind</strong>: global function</p>
-<p><strong>Returns</strong>: <code>Array</code> - An array of selected workers where each selected worker is chosen with probability equal to</p>
-<p>number of staked tokens</p>
-<p>| Param | Type | Default | Description |</p>
-<p>| --- | --- | --- | --- |</p>
-<p>| scAddr | <code>string</code> |  | Secret contract address |</p>
-<p>| params | <code>Object</code> |  | Worker params |</p>
-<p>| workerGroupSize | <code>number</code> | <code>5</code> | Number of workers to be selected for task |</p>
+<p><strong>Kind</strong>: global function<br />
+<strong>Returns</strong>: <code>Array</code> - An array of selected workers where each selected worker is chosen with probability equal to
+number of staked tokens  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>scAddr</td>
+<td><code>string</code></td>
+<td></td>
+<td>Secret contract address</td>
+</tr>
+<tr>
+<td>params</td>
+<td><code>Object</code></td>
+<td></td>
+<td>Worker params: 1) Worker addresses; 2) Worker stakes; 3) Network seed</td>
+</tr>
+<tr>
+<td>workerGroupSize</td>
+<td><code>number</code></td>
+<td><code>5</code></td>
+<td>Number of workers to be selected for task</td>
+</tr>
+</tbody>
+</table>
 <p><a name="sendTaskInput"></a></p>
 <h2 id="sendtaskinputtask-eventemitter">sendTaskInput(task) ⇒ <code>EventEmitter</code></h2>
 <p>Send Task to Enigma p2p network for computation</p>
-<p><strong>Kind</strong>: global function</p>
-<p><strong>Returns</strong>: <code>EventEmitter</code> - EventEmitter to be listened to track submission of Task to Enigma p2p network. Emits</p>
-<p>a response from the ENG network indicating whether client is ready to track the remainder of the task lifecycle</p>
-<p>| Param | Type | Description |</p>
-<p>| --- | --- | --- |</p>
-<p>| task | <code>Task</code> | Task wrapper for contract deployment and regular tasks |</p>
+<p><strong>Kind</strong>: global function<br />
+<strong>Returns</strong>: <code>EventEmitter</code> - EventEmitter to be listened to track submission of Task to Enigma p2p network. Emits
+a response from the ENG network indicating whether client is ready to track the remainder of the task lifecycle  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>task</td>
+<td><code>Task</code></td>
+<td>Task wrapper for contract deployment and regular tasks</td>
+</tr>
+</tbody>
+</table>
 <p><a name="getTaskResult"></a></p>
 <h2 id="gettaskresulttask-eventemitter">getTaskResult(task) ⇒ <code>EventEmitter</code></h2>
 <p>Get task result from p2p network</p>
-<p><strong>Kind</strong>: global function</p>
-<p><strong>Returns</strong>: <code>EventEmitter</code> - EventEmitter to be listened to track getting result from Enigma network. Emits</p>
-<p>a response from the ENG network.</p>
-<p>| Param | Type | Description |</p>
-<p>| --- | --- | --- |</p>
-<p>| task | <code>Task</code> | Task wrapper for contract deployment and regular tasks |</p>
+<p><strong>Kind</strong>: global function<br />
+<strong>Returns</strong>: <code>EventEmitter</code> - EventEmitter to be listened to track getting result from Enigma network. Emits
+a response from the ENG network.  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>task</td>
+<td><code>Task</code></td>
+<td>Task wrapper for contract deployment and regular tasks</td>
+</tr>
+</tbody>
+</table>
+<p><a name="decryptTaskResult"></a></p>
+<h2 id="decrypttaskresulttask-task">decryptTaskResult(task) ⇒ <code>Task</code></h2>
+<p>Decrypt task result</p>
+<p><strong>Kind</strong>: global function<br />
+<strong>Returns</strong>: <code>Task</code> - Decrypted task result wrapper  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>task</td>
+<td><code>Task</code></td>
+<td>Task wrapper for contract deployment and regular tasks</td>
+</tr>
+</tbody>
+</table>
 <p><a name="pollTaskStatusGen"></a></p>
 <h2 id="polltaskstatusgentask-withresult">pollTaskStatusGen(task, withResult)</h2>
 <p>Generator function for polling the Enigma p2p network for task status</p>
-<p><strong>Kind</strong>: global function</p>
-<p>| Param | Type | Description |</p>
-<p>| --- | --- | --- |</p>
-<p>| task | <code>Task</code> | Task wrapper for contract deployment and regular tasks |</p>
-<p>| withResult | <code>boolean</code> | Task wrapper for contract deployment and regular tasks |</p>
+<p><strong>Kind</strong>: global function  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>task</td>
+<td><code>Task</code></td>
+<td>Task wrapper for contract deployment and regular tasks</td>
+</tr>
+<tr>
+<td>withResult</td>
+<td><code>boolean</code></td>
+<td>Task wrapper for contract deployment and regular tasks</td>
+</tr>
+</tbody>
+</table>
 <p><a name="innerPollTaskStatus"></a></p>
 <h2 id="innerpolltaskstatustask-generator-emitter">innerPollTaskStatus(task, generator, emitter)</h2>
 <p>Inner poll status function that continues to poll the Enigma p2p network until the task has been verified</p>
-<p><strong>Kind</strong>: global function</p>
-<p>| Param | Type | Description |</p>
-<p>| --- | --- | --- |</p>
-<p>| task | <code>Task</code> | Task wrapper for contract deployment and regular tasks |</p>
-<p>| generator | <a href="#pollTaskStatusGen"><code>pollTaskStatusGen</code></a> | Generator function for polling Enigma p2p network for task status |</p>
-<p>| emitter | <code>EventEmitter</code> | EventEmitter to track Enigma p2p network polling for Task status |</p>
+<p><strong>Kind</strong>: global function  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>task</td>
+<td><code>Task</code></td>
+<td>Task wrapper for contract deployment and regular tasks</td>
+</tr>
+<tr>
+<td>generator</td>
+<td><a href="#pollTaskStatusGen"><code>pollTaskStatusGen</code></a></td>
+<td>Generator function for polling Enigma p2p network for task status</td>
+</tr>
+<tr>
+<td>emitter</td>
+<td><code>EventEmitter</code></td>
+<td>EventEmitter to track Enigma p2p network polling for Task status</td>
+</tr>
+</tbody>
+</table>
 <p><a name="pollTaskStatus"></a></p>
 <h2 id="polltaskstatustask-withresult-eventemitter">pollTaskStatus(task, withResult) ⇒ <code>EventEmitter</code></h2>
 <p>Poll the Enigma p2p network for a TaskInput's status</p>
-<p><strong>Kind</strong>: global function</p>
-<p><strong>Returns</strong>: <code>EventEmitter</code> - EventEmitter to be listened to track polling the Enigma p2p network for a Task status.</p>
-<p>Emits a Task with task result attributes</p>
-<p>| Param | Type | Default | Description |</p>
-<p>| --- | --- | --- | --- |</p>
-<p>| task | <code>Task</code> |  | Task wrapper for contract deployment and regular tasks |</p>
-<p>| withResult | <code>boolean</code> | <code>false</code> | Task wrapper for contract deployment and regular tasks |</p>
+<p><strong>Kind</strong>: global function<br />
+<strong>Returns</strong>: <code>EventEmitter</code> - EventEmitter to be listened to track polling the Enigma p2p network for a Task status.
+Emits a Task with task result attributes  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>task</td>
+<td><code>Task</code></td>
+<td></td>
+<td>Task wrapper for contract deployment and regular tasks</td>
+</tr>
+<tr>
+<td>withResult</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Task wrapper for contract deployment and regular tasks</td>
+</tr>
+</tbody>
+</table>
 <p><a name="serializeTask"></a></p>
 <h2 id="serializetasktask-object">serializeTask(task) ⇒ <code>Object</code></h2>
 <p>Serialize Task for submission to the Enigma p2p network</p>
-<p><strong>Kind</strong>: global function</p>
-<p><strong>Returns</strong>: <code>Object</code> - Serialized Task for submission to the Enigma p2p network</p>
-<p>| Param | Type | Description |</p>
-<p>| --- | --- | --- |</p>
-<p>| task | <code>Task</code> | Task wrapper for contract deployment and regular tasks |</p>
+<p><strong>Kind</strong>: global function<br />
+<strong>Returns</strong>: <code>Object</code> - Serialized Task for submission to the Enigma p2p network  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>task</td>
+<td><code>Task</code></td>
+<td>Task wrapper for contract deployment and regular tasks</td>
+</tr>
+</tbody>
+</table>
 <p><a name="obtainTaskKeyPair"></a></p>
 <h2 id="obtaintaskkeypair-object">obtainTaskKeyPair() ⇒ <code>Object</code></h2>
-<p>Deterministically generate a key-secret pair necessary for deriving a shared encryption key with the selected</p>
-<p>worker. This pair will be stored in local storage for quick retrieval.</p>
-<p><strong>Kind</strong>: global function</p>
-<p><strong>Returns</strong>: <code>Object</code> - Public key-private key pair</p>
-<p><a name="deploySecretContract"></a></p>
+<p>Deterministically generate a key-secret pair necessary for deriving a shared encryption key with the selected
+worker. This pair will be stored in local storage for quick retrieval.</p>
+<p><strong>Kind</strong>: global function<br />
+<strong>Returns</strong>: <code>Object</code> - Public key-private key pair<br />
+<a name="deploySecretContract"></a></p>
 <h2 id="deploysecretcontractfn-args-gaslimit-gaspx-sender-precode-task">deploySecretContract(fn, args, gasLimit, gasPx, sender, preCode) ⇒ <code>Task</code></h2>
-<p>Create a task to deploy a secret contract - creates base task, creates task record, and sends task to the</p>
-<p>Enigma network.</p>
-<p><strong>Kind</strong>: global function</p>
-<p><strong>Returns</strong>: <code>Task</code> - Task with attributes necessary for task record and Enigma network</p>
-<p>| Param | Type | Description |</p>
-<p>| --- | --- | --- |</p>
-<p>| fn | <code>string</code> | Function name |</p>
-<p>| args | <code>Array</code> | Inputs for task in the form of [[arg1, '<type>'], ..., [argn, '<type>']] |</p>
-<p>| gasLimit | <code>Number</code> | ENG gas limit for task computation |</p>
-<p>| gasPx | <code>Number</code> | ENG gas price for task computation |</p>
-<p>| sender | <code>string</code> | ETH address for task sender |</p>
-<p>| preCode | <code>string</code> | Precode for contract deployment |</p>
+<p>Create a task to deploy a secret contract - creates base task, creates task record, and sends task to the
+Enigma network.</p>
+<p><strong>Kind</strong>: global function<br />
+<strong>Returns</strong>: <code>Task</code> - Task with attributes necessary for task record and Enigma network  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fn</td>
+<td><code>string</code></td>
+<td>Function name</td>
+</tr>
+<tr>
+<td>args</td>
+<td><code>Array</code></td>
+<td>Inputs for task in the form of [[arg1, '<type>'], ..., [argn, '<type>']]</td>
+</tr>
+<tr>
+<td>gasLimit</td>
+<td><code>Number</code></td>
+<td>ENG gas limit for task computation</td>
+</tr>
+<tr>
+<td>gasPx</td>
+<td><code>Number</code></td>
+<td>ENG gas price for task computation</td>
+</tr>
+<tr>
+<td>sender</td>
+<td><code>string</code></td>
+<td>ETH address for task sender</td>
+</tr>
+<tr>
+<td>preCode</td>
+<td><code>string</code></td>
+<td>Precode for contract deployment</td>
+</tr>
+</tbody>
+</table>
 <p><a name="computeTask"></a></p>
 <h2 id="computetaskfn-args-gaslimit-gaspx-sender-scaddr-task">computeTask(fn, args, gasLimit, gasPx, sender, scAddr) ⇒ <code>Task</code></h2>
 <p>Create a compute task - creates base task, creates task record, and sends task to the Enigma network.</p>
-<p><strong>Kind</strong>: global function</p>
-<p><strong>Returns</strong>: <code>Task</code> - Task with attributes necessary for task record and Enigma network</p>
-<p>| Param | Type | Description |</p>
-<p>| --- | --- | --- |</p>
-<p>| fn | <code>string</code> | Function name |</p>
-<p>| args | <code>Array</code> | Inputs for task in the form of [[arg1, '<type>'], ..., [argn, '<type>']] |</p>
-<p>| gasLimit | <code>Number</code> | ENG gas limit for task computation |</p>
-<p>| gasPx | <code>Number</code> | ENG gas price for task computation |</p>
-<p>| sender | <code>string</code> | ETH address for task sender |</p>
-<p>| scAddr | <code>string</code> | Secret contract address |</p>
+<p><strong>Kind</strong>: global function<br />
+<strong>Returns</strong>: <code>Task</code> - Task with attributes necessary for task record and Enigma network  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fn</td>
+<td><code>string</code></td>
+<td>Function name</td>
+</tr>
+<tr>
+<td>args</td>
+<td><code>Array</code></td>
+<td>Inputs for task in the form of [[arg1, '<type>'], ..., [argn, '<type>']]</td>
+</tr>
+<tr>
+<td>gasLimit</td>
+<td><code>Number</code></td>
+<td>ENG gas limit for task computation</td>
+</tr>
+<tr>
+<td>gasPx</td>
+<td><code>Number</code></td>
+<td>ENG gas price for task computation</td>
+</tr>
+<tr>
+<td>sender</td>
+<td><code>string</code></td>
+<td>ETH address for task sender</td>
+</tr>
+<tr>
+<td>scAddr</td>
+<td><code>string</code></td>
+<td>Secret contract address</td>
+</tr>
+</tbody>
+</table>
 <p><a name="version"></a></p>
 <h2 id="version-string">version() ⇒ <code>string</code></h2>
 <p>Return the version number of the library</p>
 <p><strong>Kind</strong>: global function</p>
-<p>Ainsleys-MacBook-Pro:api ainsleyenigma$</p>
                 
                   
                 

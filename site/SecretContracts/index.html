@@ -289,38 +289,9 @@
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Overview
-      </label>
-    
     <a href="./" title="Overview" class="md-nav__link md-nav__link--active">
       Overview
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#enigma-secret-contract-esc-development-environment" title="Enigma Secret Contract (ESC) Development Environment 🌱" class="md-nav__link">
-    Enigma Secret Contract (ESC) Development Environment 🌱
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -379,7 +350,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../IntroductionToDeployment/" title="Deploy Discovery" class="md-nav__link">
+    <a href="../NetworkSetup/" title="Deploy Discovery" class="md-nav__link">
       Deploy Discovery
     </a>
   </li>
@@ -391,7 +362,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../SecretContractWalkthrough/" title="Write a Secret Contract" class="md-nav__link">
+    <a href="../Walkthrough_secretContract/" title="Write a Secret Contract" class="md-nav__link">
       Write a Secret Contract
     </a>
   </li>
@@ -515,22 +486,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#enigma-secret-contract-esc-development-environment" title="Enigma Secret Contract (ESC) Development Environment 🌱" class="md-nav__link">
-    Enigma Secret Contract (ESC) Development Environment 🌱
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -543,46 +498,9 @@
                 
                 
                 <h1 id="secret-contracts">Secret Contracts 🤫</h1>
-<p><a href="http://enigma.co/protocol-discovery/glossary.html#secret-contract">Secret contracts</a> are self-executing contracts with encrypted inputs and outputs. Once deployed on the Enigma network, they are called by the end-users of decentralized applications and executed by Enigma nodes.</p>
+<p><a href="../Glossary/">Secret contracts</a> are self-executing contracts with encrypted inputs and outputs. Once deployed on the Enigma network, they are called by the end-users of decentralized applications and executed by Enigma nodes.</p>
 <p>Enigma Secret Contracts are written in Rust. If you are not familiar with Rust, check out our walkthrough (which will also take you through developing your first Secret Contract). </p>
-<p><strong>We highly encourage the walkthrough for first-time users.</strong> 🤞</p>
-<h2 id="enigma-secret-contract-esc-development-environment">Enigma Secret Contract (ESC) Development Environment 🌱</h2>
-<p>The ESC environment includes <code>eng_wasm</code> crate, which implements: </p>
-<ol>
-<li>A bridge to Enigma runtime; </li>
-<li>Utilities for generating code that implements calls to the exported ESC’s functions and calls from ESC to Ethereum contracts. </li>
-</ol>
-<p>In the future this crate will be populated through crates.io, and then ESC may be created and built on any client satisfying the following requirements:</p>
-<ul>
-<li>Nightly Rust language installed</li>
-<li><code>wasm32-unknown-unknown</code> target installed (<a href="https://www.hellorust.com/news/native-wasm-target.html">link</a>)</li>
-</ul>
-<p>This means that once you have written your secret contract as per the guidelines below, you will compile it with the following command:
-<code>cargo build --release --target wasm32-unknown-unknown</code></p>
-<p>Which will put the compiled library under:<br />
-<code>target/wasm32-unknown-unknown/release/contract_name.wasm</code></p>
-<p>Today the easiest way to create ESC is to create it as part of enigma-core-internal project. There is a directory called <a href="https://github.com/enigmampc/enigma-core-internal/tree/develop/examples/eng_wasm_contracts">examples</a> under the root directory. Here you can see the examples of the existing ESCs and here you can add your own examples.</p>
-<p>ESC should be Rust dynamic library crate:</p>
-<ul>
-<li>It should contain <code>src/lib.rs</code> file as its main file</li>
-<li>In <code>Cargo.toml</code> the following should be defined: <code>[lib]
-crate-type = [“cdylib”]</code></li>
-</ul>
-<p><a href="https://doc.rust-lang.org/reference/linkage.html">Reference</a>: This section instructs the compiler to produce a dynamic system library to be loaded from another language. This output type will create <code>*.so</code> files on Linux, <code>*.dylib</code> files on macOS, and <code>*.dll</code> files on Windows.</p>
-<p>Additional requirements:
--   At the root level add <code>.cargo/config</code> with the following content:</p>
-<p><code>[build]
-target = “wasm32-unknown-unknown”</code></p>
-<ul>
-<li>Cargo.toml:</li>
-</ul>
-<pre><code>[dependencies] eng_wasm = { path = “../../../eng-wasm”]
-eng_wasm_derive = { path = “../../../eng-wasm/derive” ]
-[profile.release]
-panic = “abort”
-lto = true
-opt-level = “z”
-</code></pre>
+<p><strong>We highly encourage the <a href="../SecretContractWalkthrough/">walkthrough</a> for first-time users.</strong> 🤞</p>
                 
                   
                 
