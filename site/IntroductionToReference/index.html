@@ -36,7 +36,7 @@
     
     
       
-        <title>About Reference - Enigma Protocol</title>
+        <title>Enigma Components - Enigma Protocol</title>
       
     
     
@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#reference-documentation" tabindex="1" class="md-skip">
+      <a href="#enigma-protocol-components" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -108,7 +108,7 @@
               Enigma Protocol
             </span>
             <span class="md-header-nav__topic">
-              About Reference
+              Enigma Components
             </span>
           
         </div>
@@ -410,11 +410,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        About Reference
+        Enigma Components
       </label>
     
-    <a href="./" title="About Reference" class="md-nav__link md-nav__link--active">
-      About Reference
+    <a href="./" title="Enigma Components" class="md-nav__link md-nav__link--active">
+      Enigma Components
     </a>
     
       
@@ -479,6 +479,18 @@
   <li class="md-nav__item">
     <a href="../SecretContractEngine/" title="Secret Contract Engine" class="md-nav__link">
       Secret Contract Engine
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../KeyManagement/" title="Key Management" class="md-nav__link">
+      Key Management
     </a>
   </li>
 
@@ -558,7 +570,8 @@
               
                 
                 
-                <h1 id="reference-documentation">Reference Documentation 📖</h1>
+                <h1 id="enigma-protocol-components">Enigma Protocol Components 📖</h1>
+<p>The Enigma Protocol is made up of several distinct components, each with their own repository. This section gives an overview of what is contained in each repo, and its purpose in the protocol.</p>
 <h3 id="enigma-smart-contract-and-library">Enigma Smart Contract and Library</h3>
 <p>This repository includes the JavaScript Enigma Library, which provides the interface that secret contract and dApp developers use to interact with the Enigma protocol. The source code is written in ECMAScript 6 (ES6) and comes prebundled with Webpack, and is exported in UMD format to provide universal functionality. The repository also includes more than 100 unit tests that both provide up to 98% code coverage, as well as comprehensively describes the functions provided both by the Enigma Library and the Enigma Contract.</p>
 <p>This repository also includes the Enigma smart contract written in Solidity, which implements the consensus layer for the Discovery release of the Enigma Protocol. Due to the limitations of EVM (Etherium Virtual Machine) as well as the complexity of the contract itself, several components have been broken down into modular contracts and libraries that come together into what is referred to as the <em>Enigma Contract</em>.  One instance of this contract will be first deployed on the Ethereum testnet, and once more later on mainnet release.</p>

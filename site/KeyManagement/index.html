@@ -36,7 +36,7 @@
     
     
       
-        <title>Key Management  🗝️ - Enigma Protocol</title>
+        <title>Key Management - Enigma Protocol</title>
       
     
     
@@ -108,7 +108,7 @@
               Enigma Protocol
             </span>
             <span class="md-header-nav__topic">
-              Key Management  🗝️
+              Key Management
             </span>
           
         </div>
@@ -378,10 +378,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
     
     <label class="md-nav__link" for="nav-8">
       Reference
@@ -399,8 +401,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../IntroductionToReference/" title="About Reference" class="md-nav__link">
-      About Reference
+    <a href="../IntroductionToReference/" title="Enigma Components" class="md-nav__link">
+      Enigma Components
     </a>
   </li>
 
@@ -426,6 +428,56 @@
     <a href="../SecretContractEngine/" title="Secret Contract Engine" class="md-nav__link">
       Secret Contract Engine
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Key Management
+      </label>
+    
+    <a href="./" title="Key Management" class="md-nav__link md-nav__link--active">
+      Key Management
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-concepts-and-definitions" title="Key Concepts and Definitions" class="md-nav__link">
+    Key Concepts and Definitions
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -463,6 +515,22 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-concepts-and-definitions" title="Key Concepts and Definitions" class="md-nav__link">
+    Key Concepts and Definitions
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -474,17 +542,27 @@
               
                 
                 
-                <h1 id="key-management">Key Management  🗝️</h1>
-<p>The end-user of a dApp is provided with encryption keys when they interact with a secret contract. </p>
-<p>TODO</p>
-<ul>
-<li>Where are the keys stored </li>
-<li>How can users access the keys</li>
-<li>When might a user need to access the keys</li>
-<li>What enigma-js functions are related to user's key-management?</li>
-<li>What kind of keys are they / what are their features?</li>
-<li>This enables private outputs.</li>
-</ul>
+                <h1 id="key-management">Key Management  🗝</h1>
+<p>All data (in flight or at rest) must be encrypted at all times except inside of enclaves at computation time. Since any node must be able to work on any encrypted data, all data must be encrypted using keys sharable to all nodes.</p>
+<h3 id="key-concepts-and-definitions">Key Concepts and Definitions</h3>
+<p>Here is a description of the key management model broken down by role.</p>
+<p>User</p>
+<ol>
+<li><strong>Signing Key</strong>  (asymmetric): basically an Ethereum key that can be used to uniquely identify the user submitting the request.</li>
+<li><strong>Encryption key</strong>  (asymmetric): the key used to derive an input/output key using ECDH (Elliptic-curve Diffie–Hellman).</li>
+</ol>
+<p>Worker/Enclave</p>
+<ol>
+<li><strong>Signing key</strong>  (asymmetric): the key used to prove computations have happened inside the enclave (which is attached to the quote).</li>
+<li><strong>Encryption key</strong>  - asymmetric, the key used to derive an input/output key using ECDH (Elliptic-curve Diffie–Hellman).</li>
+<li><strong>Master key</strong>  (symmetric): a key used to derive other State keys (this can easily be done for example by setting contract_state_key := H(master_key || contract_id)</li>
+<li><strong>State key</strong>  (symmetric): Shared AES-256 key per contract (right now everyone shares it, later on will be sharded). If it’s generated from the master key, this can be done on the fly and does not need to be stored.</li>
+</ol>
+<p>Shared keys (fresh for every task)</p>
+<ol>
+<li><strong>Input key</strong>  (symmetric, derived): Worker has a permanent pubkey which is known. User uses that + its private key to generate a unique symmetric key for encrypting the argument. User can send its pubkey with the tx. We can use the taskid to make it fresh.</li>
+<li><strong>Output key</strong>  (symmetric, derived): If there’s a return argument, then the same as #1 but in reverse happens - the worker can generate a new symmetric key from its private key and the user’s pubkey. We can use the taskid to make it fresh.</li>
+</ol>
                 
                   
                 
@@ -501,6 +579,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../SecretContractEngine/" title="Secret Contract Engine" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Secret Contract Engine
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Glossary/" title="Glossary" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Glossary
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

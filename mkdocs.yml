@@ -38,8 +38,8 @@ nav:
     - Examples: SecretContractExamples.md
   - Tutorials:
     - Learn Rust: RustWalkthrough.md
-    - Deploy Discovery: IntroductionToDeployment.md
-    - Write a Secret Contract: SecretContractWalkthrough.md
+    - Deploy Discovery: NetworkSetup.md
+    - Write a Secret Contract: Walkthrough_secretContract.md
   - FAQ: FAQ.md
   - Reference:
     - Enigma Components: IntroductionToReference.md

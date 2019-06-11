@@ -401,8 +401,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../IntroductionToReference/" title="About Reference" class="md-nav__link">
-      About Reference
+    <a href="../IntroductionToReference/" title="Enigma Components" class="md-nav__link">
+      Enigma Components
     </a>
   </li>
 
@@ -472,6 +472,18 @@
   <li class="md-nav__item">
     <a href="../SecretContractEngine/" title="Secret Contract Engine" class="md-nav__link">
       Secret Contract Engine
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../KeyManagement/" title="Key Management" class="md-nav__link">
+      Key Management
     </a>
   </li>
 
@@ -579,9 +591,15 @@ connects to. The task data message is propagated to each node in the network. Up
 </ol>
 <p>Since secret contracts are stateful, the selected worker keeps an up-to-date copy of the state in memory. State updates are propagated to all nodes in the form of encrypted state deltas. Each node keeps the state deltas in an ordered list from which the full state can be reconstituted. After each computation, the
 results are encrypted and propagated to the network. The Enigma Library watches for the results.</p>
-<p>A computation task is only confirmed after verification on Ethereum. After computing a task, the selected worker commits a task receipt linked the task record. Unlike MVT, workers process tasks in batches instead of committing every task to Ethereum immediately. These are the triggers to commit tasks:
-1. the current epoch ends
-2. the business logic of a task calls an Ethereum smart contract</p>
+<p>A computation task is only confirmed after verification on Ethereum. After computing a task, the selected worker commits a task receipt linked the task record. Unlike MVT, workers process tasks in batches instead of committing every task to Ethereum immediately. These are the triggers to commit tasks:</p>
+<ol>
+<li>
+<p>the current epoch ends</p>
+</li>
+<li>
+<p>the business logic of a task calls an Ethereum smart contract</p>
+</li>
+</ol>
 <p>When either trigger occurs, the worker commits a batch of all
 unconfirmed tasks stored locally. Ethereum does not store the tasks results nor the encrypted state deltas, only hashes from which nodes can verify the integrity of their own data.</p>
                 
@@ -604,7 +622,7 @@ unconfirmed tasks stored locally. Ethereum does not store the tasks results nor 
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../IntroductionToReference/" title="About Reference" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../IntroductionToReference/" title="Enigma Components" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -613,7 +631,7 @@ unconfirmed tasks stored locally. Ethereum does not store the tasks results nor 
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                About Reference
+                Enigma Components
               </span>
             </div>
           </a>

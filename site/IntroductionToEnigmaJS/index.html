@@ -260,30 +260,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#worker-verification" title="Worker Verification" class="md-nav__link">
-    Worker Verification
+  <a href="#secret-contact-execution-process" title="Secret Contact Execution Process" class="md-nav__link">
+    Secret Contact Execution Process
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#computation-tasks" title="Computation Tasks" class="md-nav__link">
     Computation Tasks
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
+  <a href="#worker-verification" title="Worker Verification" class="md-nav__link">
+    Worker Verification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#on-chain-computation" title="On-Chain Computation" class="md-nav__link">
     On-Chain Computation
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#task-verification" title="Task Verification" class="md-nav__link">
     Task Verification
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -460,8 +473,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../IntroductionToReference/" title="About Reference" class="md-nav__link">
-      About Reference
+    <a href="../IntroductionToReference/" title="Enigma Components" class="md-nav__link">
+      Enigma Components
     </a>
   </li>
 
@@ -486,6 +499,18 @@
   <li class="md-nav__item">
     <a href="../SecretContractEngine/" title="Secret Contract Engine" class="md-nav__link">
       Secret Contract Engine
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../KeyManagement/" title="Key Management" class="md-nav__link">
+      Key Management
     </a>
   </li>
 
@@ -528,30 +553,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#worker-verification" title="Worker Verification" class="md-nav__link">
-    Worker Verification
+  <a href="#secret-contact-execution-process" title="Secret Contact Execution Process" class="md-nav__link">
+    Secret Contact Execution Process
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#computation-tasks" title="Computation Tasks" class="md-nav__link">
     Computation Tasks
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
+  <a href="#worker-verification" title="Worker Verification" class="md-nav__link">
+    Worker Verification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#on-chain-computation" title="On-Chain Computation" class="md-nav__link">
     On-Chain Computation
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#task-verification" title="Task Verification" class="md-nav__link">
     Task Verification
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -582,10 +620,8 @@
 <li>submit tasks to ENG network and receive encrypted outputs that can be decrypted by the user</li>
 </ol>
 <p>🤞 Note: The Enigma Network has its own <strong>secret contracts.</strong> The business logic of a computation task is contained in a secret contract, which is deployed on the Enigma Network. This is in contrast to having this logic in the function of an Ethereum smart contract. This is more powerful for many reasons; notably, a secret contract may store an encrypted state.</p>
-<h2 id="worker-verification">Worker Verification</h2>
-<p>In the first release of Discovery, only one <strong>worker</strong> is assigned to a smart contract at any given time. A new worker is randomly assigned to a contract at the beginning of each epoch. Before creating a computation task, the Enigma Library verifies the selected worker using the cryptographic proofs included in its SGX report.</p>
-<p>🤞A <strong>worker</strong> is an Enigma Node-- it will execute the computation over the data submitted in the task and return an encrypted result. The node-runner does not see the data at any time.</p>
-<h2 id="computation-tasks">Computation Tasks</h2>
+<h2 id="secret-contact-execution-process">Secret Contact Execution Process</h2>
+<h3 id="computation-tasks">Computation Tasks</h3>
 <p>When creating a computation task, the dApp user encrypts all inputs using the Enigma Library:</p>
 <ol>
 <li>address of the secret contract</li>
@@ -596,7 +632,10 @@
 </ol>
 <p>Then, the Enigma Library creates an Ethereum transaction containing a record of the task. The record simply contains a hash of all inputs and some metadata about the task. It contains as little data as possible to minimize the Ethereum storage fee. <em>The task record is the primary source truth for each task. It will
 be used by the Enigma Network to verify inputs and the order of tasks.</em></p>
-<h2 id="on-chain-computation">On-Chain Computation</h2>
+<h3 id="worker-verification">Worker Verification</h3>
+<p>In the first release of Discovery, only one <strong>worker</strong> is assigned to a smart contract at any given time. A new worker is randomly assigned to a contract at the beginning of each epoch. Before creating a computation task, the Enigma Library verifies the selected worker using the cryptographic proofs included in its SGX report.</p>
+<p>🤞A <strong>worker</strong> is an Enigma Node-- it will execute the computation over the data submitted in the task and return an encrypted result. The node-runner does not see the data at any time.</p>
+<h3 id="on-chain-computation">On-Chain Computation</h3>
 <p>Once the task record transaction is submitted, the Enigma
 Library broadcasts the task data to the Enigma Network via its
 user node, the Enigma Network node that the dApp user
@@ -606,7 +645,7 @@ connects to. The task data message is propagated to each node in the network. Up
 <li>computes the task</li>
 </ol>
 <p>Since secret contracts are stateful, the selected worker keeps an up-to-date copy of the state in memory. State updates are propagated to all nodes in the form of <strong>encrypted state deltas</strong>. Each node keeps the state deltas in an ordered list from which the full state can be reconstituted. After each computation, the results are encrypted and propagated to the network. The Enigma Library watches for the results.</p>
-<h2 id="task-verification">Task Verification</h2>
+<h3 id="task-verification">Task Verification</h3>
 <p>A computation task is only confirmed after verification on Ethereum. After computing a task, the selected worker commits a task receipt linked the task record. Workers process tasks in batches instead of committing every task to Ethereum immediately. These are the triggers to commit tasks:
 1. The current epoch ends
 2. A function in the task calls an Ethereum smart contract</p>
