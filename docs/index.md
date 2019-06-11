@@ -8,14 +8,14 @@ Enigma is a decentralized network that enables **Secret Contracts**. This means 
 
 - Get started quickly with our [Quick Start](Walkthrough.md) guide
 - Build your first [secret contract](Walkthrough_secretContract.md)
-- Check out some ideas for what to build with Enigma
+- Check out some [ideas for what to build with Enigma](https://blog.enigma.co/the-developer-quickstart-guide-to-enigma-880c3fc4308)
 
 
 ### Data Flow 💾
 
- 1. A secret contract function call is considered a single private computation or [task](http://enigma.co/protocol-discovery/glossary.html#task). Secret contracts are registered at deployment on the Enigma Contract (on Ethereum), which the Enigma network watches for new tasks. 
+ 1. A secret contract function call is considered a single private computation or [task](Glossary.md). Secret contracts are registered at deployment on the Enigma Contract (on Ethereum), which the Enigma network watches for new tasks. 
  2. These tasks are initiated (and paid for) by the end users of Ethereum dApps and are then offloaded from Ethereum into the Enigma network for computation. 
- 3. The Enigma network then selects a [worker node](http://enigma.co/protocol-discovery/glossary.html#worker) to execute the given task in a modified Web Assembly interpreter (WASMI) running inside a Trusted Execution Environment (TEE) using Intel Software Guard Extensions (SGX) technology (also known as an [enclave](http://enigma.co/protocol-discovery/glossary.html#enclave)). 
+ 3. The Enigma network then selects a [worker node](Glossary.md#worker) to execute the given task in a modified Web Assembly interpreter (WASMI) running inside a Trusted Execution Environment (TEE) using Intel Software Guard Extensions (SGX) technology (also known as an [enclave](Glossary.md#enclave)). 
  4. After computing a task, a cryptographic proof of the completed task is recorded, and eventually verified, on the Ethereum network.
 
 ## Enigma and Ethereum

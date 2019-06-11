@@ -8,7 +8,7 @@ This should only take 15–20 seconds (unless it is your first time, in which ca
 Create a brand new Rust library containing our secret contract logic with the following command:
 `cargo new secret_contracts/millionaires_problem --lib`
 
-Copy and paste the contents of the `secret_contracts/Cargo.toml.template`file into the `Cargo.toml` file inside the library of `secret_contracts/millionaires_problem` that we created in step 2. 
+Copy and paste the contents of the `secret_contracts/Cargo.toml.template`file into the `Cargo.toml` file inside the library of `secret_contracts/millionaires_problem` that was just created. 
 
 Under `[dependencies]` add this line: `serde = “1.0.84”`.
 
