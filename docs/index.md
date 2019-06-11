@@ -6,15 +6,12 @@ Enigma is a decentralized network that enables **Secret Contracts**. This means 
 
 **Ready to dive in?**
 
-- Get started quickly with our Quick Start guide
-- Build your first secret contract
+- Get started quickly with our [Quick Start](Walkthrough.md) guide
+- Build your first [secret contract](Walkthrough_secretContract.md)
 - Check out some ideas for what to build with Enigma
 
-## Overview 👁️
-[insert diagram here]
-This diagram illustrates how data flows in an Enigma-based application.
 
-### Data Flow
+### Data Flow 💾
 
  1. A secret contract function call is considered a single private computation or [task](http://enigma.co/protocol-discovery/glossary.html#task). Secret contracts are registered at deployment on the Enigma Contract (on Ethereum), which the Enigma network watches for new tasks. 
  2. These tasks are initiated (and paid for) by the end users of Ethereum dApps and are then offloaded from Ethereum into the Enigma network for computation. 
