@@ -513,6 +513,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="types/" title="Supported Types" class="md-nav__link">
+      Supported Types
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -618,13 +630,13 @@
 <ul>
 <li>Get started quickly with our <a href="Walkthrough/">Quick Start</a> guide</li>
 <li>Build your first <a href="Walkthrough_secretContract/">secret contract</a></li>
-<li>Check out some ideas for what to build with Enigma</li>
+<li>Check out some <a href="https://blog.enigma.co/the-developer-quickstart-guide-to-enigma-880c3fc4308">ideas for what to build with Enigma</a></li>
 </ul>
 <h3 id="data-flow">Data Flow 💾</h3>
 <ol>
-<li>A secret contract function call is considered a single private computation or <a href="http://enigma.co/protocol-discovery/glossary.html#task">task</a>. Secret contracts are registered at deployment on the Enigma Contract (on Ethereum), which the Enigma network watches for new tasks. </li>
+<li>A secret contract function call is considered a single private computation or <a href="Glossary/">task</a>. Secret contracts are registered at deployment on the Enigma Contract (on Ethereum), which the Enigma network watches for new tasks. </li>
 <li>These tasks are initiated (and paid for) by the end users of Ethereum dApps and are then offloaded from Ethereum into the Enigma network for computation. </li>
-<li>The Enigma network then selects a <a href="http://enigma.co/protocol-discovery/glossary.html#worker">worker node</a> to execute the given task in a modified Web Assembly interpreter (WASMI) running inside a Trusted Execution Environment (TEE) using Intel Software Guard Extensions (SGX) technology (also known as an <a href="http://enigma.co/protocol-discovery/glossary.html#enclave">enclave</a>). </li>
+<li>The Enigma network then selects a <a href="Glossary/#worker">worker node</a> to execute the given task in a modified Web Assembly interpreter (WASMI) running inside a Trusted Execution Environment (TEE) using Intel Software Guard Extensions (SGX) technology (also known as an <a href="Glossary/#enclave">enclave</a>). </li>
 <li>After computing a task, a cryptographic proof of the completed task is recorded, and eventually verified, on the Ethereum network.</li>
 </ol>
 <h2 id="enigma-and-ethereum">Enigma and Ethereum</h2>

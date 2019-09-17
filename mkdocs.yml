@@ -46,4 +46,5 @@ nav:
     - Enigma Technical Overview: EnigmaOverview.md
     - Secret Contract Engine: SecretContractEngine.md
     - Key Management: KeyManagement.md
+    - Supported Types: types.md
   - Glossary: Glossary.md

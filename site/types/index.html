@@ -36,7 +36,7 @@
     
     
       
-        <title>Examples - Enigma Protocol</title>
+        <title>Supported Types - Enigma Protocol</title>
       
     
     
@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#examples" tabindex="1" class="md-skip">
+      <a href="#secret-contract-supported-types" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -108,7 +108,7 @@
               Enigma Protocol
             </span>
             <span class="md-header-nav__topic">
-              Examples
+              Supported Types
             </span>
           
         </div>
@@ -258,12 +258,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       Secret Contracts
@@ -291,70 +289,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Examples
-      </label>
-    
-    <a href="./" title="Examples" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../SecretContractExamples/" title="Examples" class="md-nav__link">
       Examples
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#millionaires-problem" title="Millionaire's Problem" class="md-nav__link">
-    Millionaire's Problem
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#calculator" title="Calculator" class="md-nav__link">
-    Calculator
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#voting" title="Voting" class="md-nav__link">
-    Voting
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#coin-toss" title="Coin Toss" class="md-nav__link">
-    Coin Toss
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -439,10 +378,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
     
     <label class="md-nav__link" for="nav-8">
       Reference
@@ -506,11 +447,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../types/" title="Supported Types" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Supported Types" class="md-nav__link md-nav__link--active">
       Supported Types
     </a>
+    
   </li>
 
         
@@ -548,43 +498,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#millionaires-problem" title="Millionaire's Problem" class="md-nav__link">
-    Millionaire's Problem
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#calculator" title="Calculator" class="md-nav__link">
-    Calculator
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#voting" title="Voting" class="md-nav__link">
-    Voting
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#coin-toss" title="Coin Toss" class="md-nav__link">
-    Coin Toss
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -596,289 +509,31 @@
               
                 
                 
-                <h1 id="examples">Examples ⛷️</h1>
-<h2 id="millionaires-problem">Millionaire's Problem</h2>
-<pre><code>#![no_std]
-#![allow(unused_attributes)] // TODO: Remove on future nightly https://github.com/rust-lang/rust/issues/60050
-
-
-
-
-extern crate eng_wasm;
-extern crate eng_wasm_derive;
-extern crate rustc_hex as hex;
-#[macro_use]
-extern crate serde_derive;
-extern crate serde;
-
-use eng_wasm::*;
-use eng_wasm_derive::pub_interface;
-use serde::{Serialize, Deserialize};
-
-// State key name &quot;millionaires&quot; holding a vector of Millionaire structs
-static MILLIONAIRES: &amp;str = &quot;millionaires&quot;;
-
-// Struct representing a Millionaire
-#[derive(Serialize, Deserialize)]
-pub struct Millionaire {
-    address: H256, // field containing 32 byte hash type for millionaire's address
-    net_worth: U256, // field containing 32 byte uint for millionaire's net worth
-}
-
-// Public-facing secret contract function declarations
-#[pub_interface]
-pub trait ContractInterface{
-    fn add_millionaire(address: H256, net_worth: U256);
-    fn compute_richest() -&gt; H256;
-}
-
-pub struct Contract;
-
-// Private functions accessible only by the secret contract
-impl Contract {
-    // Read secret contract state to obtain vector of Millionaires (or new vector if uninitialized)
-    fn get_millionaires() -&gt; Vec&lt;Millionaire&gt; {
-        match read_state!(MILLIONAIRES) {
-            Some(vec) =&gt; vec,
-            None =&gt; Vec::new(),
-        }
-    }
-}
-
-impl ContractInterface for Contract {
-    // Add millionaire with 32-byte hash type for address and 32-byte uint for net worth
-    #[no_mangle]
-    fn add_millionaire(address: H256, net_worth: U256) {
-        // Read state to get vector of Millionaires
-        let mut millionaires = Self::get_millionaires();
-        // Append a new Millionaire struct to this vector
-        millionaires.push(Millionaire {
-            address,
-            net_worth,
-        });
-        // Write the updated vector to contract's state
-        write_state!(MILLIONAIRES =&gt; millionaires);
-    }
-
-    // Compute the richest millionaire by returning the 32-byte hash type for the address
-    #[no_mangle]
-    fn compute_richest() -&gt; H256 {
-        // Read state to get vector of Millionaires and obtain the struct corresponding to the
-        // richest millionaire by net worth
-        match Self::get_millionaires().iter().max_by_key(|m| m.net_worth) {
-            // Return millionaire's address
-            Some(millionaire) =&gt; {
-                millionaire.address
-            },
-            // Return empty address
-            None =&gt; U256::from(0).into(),
-        }
-    }
-}
-</code></pre>
-
-<h2 id="calculator">Calculator</h2>
-<pre><code>#![no_std]
-#![allow(unused_attributes)] // TODO: Remove on future nightly https://github.com/rust-lang/rust/issues/60050
-
-
-
-extern crate eng_wasm;
-extern crate eng_wasm_derive;
-
-use eng_wasm::*;
-use eng_wasm_derive::pub_interface;
-
-#[pub_interface]
-pub trait ContractInterface{
-    fn add(a: U256, b: U256) -&gt; U256;
-    fn sub(a: U256, b: U256) -&gt; U256;
-    fn mul(a: U256, b: U256) -&gt; U256;
-    fn div(a: U256, b: U256) -&gt; U256;
-}
-
-pub struct Contract;
-impl ContractInterface for Contract {
-    #[no_mangle]
-    fn add(a: U256, b: U256) -&gt; U256 {
-        let res = a.checked_add(b);
-        match res {
-            Some(r) =&gt; r,
-            None =&gt; panic!(&quot;addition overflow&quot;),
-        }
-    }
-
-    #[no_mangle]
-    fn sub(a: U256, b: U256) -&gt; U256 {
-        let res = a.checked_sub(b);
-        match res {
-            Some(r) =&gt; r,
-            None =&gt; panic!(&quot;subtraction overflow&quot;),
-        }
-    }
-
-    #[no_mangle]
-    fn mul(a: U256, b: U256) -&gt; U256 {
-        let res = a.checked_mul(b);
-        match res {
-            Some(r) =&gt; r,
-            None =&gt; panic!(&quot;multiple overflow&quot;),
-        }
-    }
-
-    #[no_mangle]
-    fn div(a: U256, b: U256) -&gt; U256 {
-        let res = a.checked_div(b);
-        match res {
-            Some(r) =&gt; r,
-            None =&gt; panic!(&quot;division by zero&quot;),
-        }
-    }
-}
-</code></pre>
-
-<h2 id="voting">Voting</h2>
-<pre><code>#![no_std]
-#![allow(unused_attributes)] // https://github.com/rust-lang/rust/issues/60050
-
-extern crate eng_wasm;
-extern crate eng_wasm_derive;
-extern crate rustc_hex;
-#[macro_use]
-extern crate serde_derive;
-extern crate serde;
-
-use eng_wasm::*;
-use eng_wasm_derive::pub_interface;
-use eng_wasm_derive::eth_contract;
-use eng_wasm::String;
-use std::collections::HashMap;
-use rustc_hex::ToHex;
-
-// VotingETH contract abi
-#[eth_contract(&quot;VotingETH.json&quot;)]
-struct EthContract;
-
-// State key name &quot;polls&quot; holding a vector of Poll structs
-static POLLS: &amp;str = &quot;polls&quot;;
-// State key name &quot;voting_eth_addr&quot; holding eth address of VotingETH contract
-static VOTING_ETH_ADDR: &amp;str = &quot;voting_eth_addr&quot;;
-
-// Public-facing secret contract function declarations
-#[pub_interface]
-pub trait ContractInterface{
-    fn construct(voting_eth_addr: H160);
-    fn cast_vote(poll_id: U256, voter: H256, vote: U256);
-    fn tally_poll(poll_id: U256);
-}
-
-pub struct Contract;
-
-// Private functions accessible only by the secret contract
-impl Contract {
-    // Read secret contract state to obtain vector of Poll structs (or new vector if uninitialized)
-    fn get_polls() -&gt; HashMap&lt;u64, HashMap&lt;String, U256&gt;&gt; {
-        read_state!(POLLS).unwrap_or_default()
-    }
-
-    // Read voting address of VotingETH contract
-    fn get_voting_eth_addr() -&gt; String {
-        read_state!(VOTING_ETH_ADDR).unwrap_or_default()
-    }
-}
-
-impl ContractInterface for Contract {
-    // Constructor function that takes in VotingETH ethereum contract address
-    #[no_mangle]
-    fn construct(voting_eth_addr: H160) {
-        let voting_eth_addr_str: String = voting_eth_addr.to_hex();
-        write_state!(VOTING_ETH_ADDR =&gt; voting_eth_addr_str);
-    }
-
-    // Cast vote function that takes poll ID, voter address, and vote - calls back to ETH
-    #[no_mangle]
-    fn cast_vote(poll_id: U256, voter: H256, vote: U256) {
-        let mut polls = Self::get_polls();
-        {
-            let voter_info = polls.entry(poll_id.as_u64()).or_insert_with(HashMap::new);
-            let key: String = voter.to_hex();
-            assert!(!(*voter_info).contains_key(&amp;key), &quot;user has already voted in poll&quot;);
-            (*voter_info).insert(key, vote);
-        }
-        write_state!(POLLS =&gt; polls);
-        let voting_eth_addr: String = Self::get_voting_eth_addr();
-        let c = EthContract::new(&amp;voting_eth_addr);
-        c.validateCastVote(poll_id);
-    }
-
-    // Tally poll function that takes poll ID - calls back to ETH
-    #[no_mangle]
-    fn tally_poll(poll_id: U256) {
-        let polls = Self::get_polls();
-        let mut tallied_quorum: U256 = U256::zero();
-        if let Some(voter_info) = polls.get(&amp;poll_id.as_u64()) {
-            for val in voter_info.values() {
-                tallied_quorum = tallied_quorum.checked_add(*val).unwrap();
-            }
-            tallied_quorum = tallied_quorum.checked_mul(100.into()).unwrap().checked_div(voter_info.len().into()).unwrap()
-        }
-        let voting_eth_addr: String = Self::get_voting_eth_addr();
-        let c = EthContract::new(&amp;voting_eth_addr);
-        c.validateTallyPoll(poll_id, tallied_quorum);
-    }
-}
-</code></pre>
-
-<h2 id="coin-toss">Coin Toss</h2>
-<pre><code>#![no_std]
-
-
-
-extern crate eng_wasm;
-extern crate eng_wasm_derive;
-
-use eng_wasm::*;
-use eng_wasm_derive::pub_interface;
-
-#[pub_interface]
-pub trait ContractInterface{
-    /// Flipping the coin. Uses true sgx randomness.
-    fn flip() -&gt; bool;
-
-    /// Player 1 commits to a coin value
-    fn commit(bool);
-
-    /// Player 2 guesses the value that player 1 was committed to. The commitment is removed.
-    /// True is returned on successful guess.
-    fn guess(guess: bool) -&gt; bool;
-}
-
-const COMMITMENT_KEY: &amp;'static str = &quot;commitment&quot;;
-
-pub struct Contract;
-
-impl ContractInterface for Contract {
-    fn flip() -&gt; bool {
-        let result: u8 = Rand::gen();
-        result % 2 == 1
-    }
-
-    fn commit(commitment: bool) {
-        let val: Option&lt;Value&gt; = read_state!(COMMITMENT_KEY);
-        if val.is_none() {
-            write_state!(COMMITMENT_KEY =&gt; commitment);
-        }
-    }
-
-    fn guess(guess: bool) -&gt; bool {
-        let val: Option&lt;Value&gt; = remove_from_state!(COMMITMENT_KEY);
-        match val {
-            Some(commitment) =&gt; commitment == guess,
-            _ =&gt; false
-        }
-    }
-}
-</code></pre>
+                <h1 id="secret-contract-supported-types">Secret Contract Supported Types</h1>
+<ul>
+<li>Signed integers: i32, i64</li>
+<li>Unsigned integers: u32, u64</li>
+<li>Unformatted binary data: H160, H256, H512</li>
+<li>Unsigned big integers: U128, U256, U512</li>
+<li>Vec<u8></li>
+<li>String</li>
+<li>Bool</li>
+<li>Vec of any above-mentioned types</li>
+</ul>
+<h1 id="mapping-of-sc-types-to-solidity-types">Mapping of SC Types to Solidity Types</h1>
+<ul>
+<li>i32 =&gt; int32</li>
+<li>i64 =&gt; int64</li>
+<li>u32 =&gt; uint32</li>
+<li>u64 =&gt; uint64</li>
+<li>H160 =&gt; address</li>
+<li>H256 =&gt; bytes32</li>
+<li>U128 =&gt; uint128</li>
+<li>U256 =&gt; uint256</li>
+<li>Vec<u8> =&gt; bytes</li>
+<li>String =&gt; string</li>
+<li>Bool =&gt; bool</li>
+</ul>
                 
                   
                 
@@ -899,7 +554,7 @@ impl ContractInterface for Contract {
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../SecretContracts/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../KeyManagement/" title="Key Management" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -908,19 +563,19 @@ impl ContractInterface for Contract {
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Overview
+                Key Management
               </span>
             </div>
           </a>
         
         
-          <a href="../RustWalkthrough/" title="Learn Rust" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../Glossary/" title="Glossary" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Learn Rust
+                Glossary
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
