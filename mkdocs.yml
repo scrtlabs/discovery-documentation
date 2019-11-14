@@ -35,6 +35,7 @@ nav:
     - API: API.md
   - Secret Contracts:
     - Overview: SecretContracts.md
+    - Supported Types: types.md
     - Examples: SecretContractExamples.md
   - Tutorials:
     - Learn Rust: RustWalkthrough.md
@@ -46,5 +47,4 @@ nav:
     - Enigma Technical Overview: EnigmaOverview.md
     - Secret Contract Engine: SecretContractEngine.md
     - Key Management: KeyManagement.md
-    - Supported Types: types.md
   - Glossary: Glossary.md
