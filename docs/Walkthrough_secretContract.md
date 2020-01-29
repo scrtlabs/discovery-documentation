@@ -42,7 +42,7 @@ Delete existing file contents.  Add the following code.
     // Built-In Attributes
     #![no_std]
 
-All of our secret contracts start exactly like this, because the SGX environment does not support all the features of Rust's standard library.  [This attribute](https://medium.com/r/?url=http%3A%2F%2Frust%20import)  removes the standard library from our program’s prelude accordingly.
+All of our secret contracts start exactly like this, because the SGX environment does not support all the features of Rust's standard library. This attribute removes the standard library from our program’s prelude accordingly.
 
 Now add:
 

@@ -24,7 +24,7 @@ This is a class of attack deployed against Trusted Execution Environments. In ad
 
 
 ### How is data shared between nodes?
-
+In the current version of Enigma, state is physically stored in the memory of every node. When the state is updated, EnigmaP2P is responsible for ensuring that update is passed to all participating nodes.
 
 ## Ethereum
 
